@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b8f9b57e-38e7-4905-94f1-e2d3443e612b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/tensorflow/lite/examples/detection/Api/ApiService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/tensorflow/lite/examples/detection/Api/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/tensorflow/lite/examples/detection/Api/Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/tensorflow/lite/examples/detection/Constant/Constant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/tensorflow/lite/examples/detection/Helper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/tensorflow/lite/examples/detection/Interface/customCallback.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/tensorflow/lite/examples/detection/Model/Data/ModelDataInfran.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/tensorflow/lite/examples/detection/Model/Json/JsonInfran.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/tensorflow/lite/examples/detection/Model/Response/ResponseDataInfran.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tensorflow-lite/tensorflow-lite.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/tensorflow/lite/examples/detection/CameraActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/tensorflow/lite/examples/detection/CameraActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/tensorflow/lite/examples/detection/DetectorActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/tensorflow/lite/examples/detection/DetectorActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/tensorflow/lite/examples/detection/LegacyCameraConnectionFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/tensorflow/lite/examples/detection/LegacyCameraConnectionFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/tensorflow/lite/examples/detection/tflite/TFLiteObjectDetectionAPIModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/tensorflow/lite/examples/detection/tflite/TFLiteObjectDetectionAPIModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/tensorflow/lite/examples/detection/tracking/MultiBoxTracker.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/tensorflow/lite/examples/detection/tracking/MultiBoxTracker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/tfe_od_activity_camera.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/tfe_od_activity_camera.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_23" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view />
+      </state>
+    </system>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/org/tensorflow/lite/examples/detection/DetectorActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-15">
+              <caret line="547" column="64" selection-start-line="547" selection-start-column="63" selection-end-line="547" selection-end-column="64" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/org/tensorflow/lite/examples/detection/Interface/customCallback.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>gray</find>
+      <find>arg</find>
+      <find>argb</find>
+      <find>rgb</find>
+      <find>facing</find>
+      <find>fron</find>
+      <find>fro</find>
+      <find>front</find>
+      <find>Camera orientation</find>
+      <find>infran</find>
+      <find>helper</find>
+      <find>902</find>
+      <find>color</find>
+      <find>90</find>
+      <find>text</find>
+      <find>flip</find>
+      <find>track</find>
+      <find>id</find>
+      <find>label</find>
+      <find>fli</find>
+      <find>thres</find>
+      <find>drae</find>
+      <find>faceBmp</find>
+      <find>faceBmp</find>
+      <find>face</find>
+      <find>facebmp</find>
+      <find>move</find>
+      <find>center</find>
+      <find>size</find>
+      <find>fa</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/tfe_od_activity_camera.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/tensorflow/lite/examples/detection/Constant/Constant.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/tensorflow/lite/examples/detection/Api/Client.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/tensorflow/lite/examples/detection/Model/ResponseDataInfran.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/tensorflow/lite/examples/detection/Model/Response/Data/ModelDataInfran.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/tensorflow/lite/examples/detection/Model/Data/ModelDataInfran.java" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/tensorflow/lite/examples/detection/Model/Response/ModelDataInfran.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/tensorflow/lite/examples/detection/Model/Response/ResponseDataInfran.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/tensorflow/lite/examples/detection/Api/Server.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/tensorflow/lite/examples/detection/Api/ApiService.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/tensorflow/lite/examples/detection/tflite/TFLiteObjectDetectionAPIModel.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/tensorflow/lite/examples/detection/tracking/MultiBoxTracker.java" />
+        <option value="$PROJECT_DIR$/app/src

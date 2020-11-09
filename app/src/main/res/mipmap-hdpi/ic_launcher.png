@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="dcf37273-7c20-4930-a173-d4684c14d460" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/rsah/watermeter/Util/AESUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rsah/watermeter/Activity/Syncronize.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rsah/watermeter/Activity/Syncronize.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rsah/watermeter/Activity/adapter/Adapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rsah/watermeter/Activity/adapter/Adapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rsah/watermeter/Api/ApiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rsah/watermeter/Api/ApiService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rsah/watermeter/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rsah/watermeter/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rsah/watermeter/Model/response/ResponseCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rsah/watermeter/Model/response/ResponseCustomer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rsah/watermeter/Session/SessionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rsah/watermeter/Session/SessionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rsah/watermeter/Util/DbCustomerHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/rsah/watermeter/Util/DbCustomerHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_syncronize.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_syncronize.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/list_row_filter.xml" beforeDir="false" afterPath="$PROJECT_DIR$

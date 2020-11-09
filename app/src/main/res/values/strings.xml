@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">E-Study</string>
+
+
+    <string-array name="jawaban_isi">
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+        <item>D</item>
+    </string-array>
+
+</resources>

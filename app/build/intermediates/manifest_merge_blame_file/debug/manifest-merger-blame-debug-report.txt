@@ -1,0 +1,89 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.duitku.e_study"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->C:\Users\Bambang\Documents\DUITKU PROJECT\DUITKU\SDK\NEW SDK 02012019\SDK BARU\newPersonalia\EStudy\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="30" />
+9-->C:\Users\Bambang\Documents\DUITKU PROJECT\DUITKU\SDK\NEW SDK 02012019\SDK BARU\newPersonalia\EStudy\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+11-->C:\Users\Bambang\Documents\DUITKU PROJECT\DUITKU\SDK\NEW SDK 02012019\SDK BARU\newPersonalia\EStudy\app\src\main\AndroidManifest.xml:5:5-80
+11-->C:\Users\Bambang\Documents\DUITKU PROJECT\DUITKU\SDK\NEW SDK 02012019\SDK BARU\newPersonalia\EStudy\app\src\main\AndroidManifest.xml:5:22-77
+12    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+12-->C:\Users\Bambang\Documents\DUITKU PROJECT\DUITKU\SDK\NEW SDK 02012019\SDK BARU\newPersonalia\EStudy\app\src\main\AndroidManifest.xml:6:5-81
+12-->C:\Users\Bambang\Documents\DUITKU PROJECT\DUITKU\SDK\NEW SDK 02012019\SDK BARU\newPersonalia\EStudy\app\src\main\AndroidManifest.xml:6:22-78
+13    <uses-permission android:name="android.permission.INTERNET" />
+13-->C:\Users\Bambang\Documents\DUITKU PROJECT\DUITKU\SDK\NEW SDK 02012019\SDK BARU\newPersonalia\EStudy\app\src\main\AndroidManifest.xml:7:5-67
+13-->C:\Users\Bambang\Documents\DUITKU PROJECT\DUITKU\SDK\NEW SDK 02012019\SDK BARU\newPersonalia\EStudy\app\src\main\AndroidManifest.xml:7:22-64
+14    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+14-->C:\Users\Bambang\Documents\DUITKU PROJECT\DUITKU\SDK\NEW SDK 02012019\SDK BARU\newPersonalia\EStudy\app\src\main\AndroidManifest.xml:8:5-79
+14-->C:\Users\Bambang\Documents\DUITKU PROJECT\DUITKU\SDK\NEW SDK 02012019\SDK BARU\newPersonalia\EStudy\app\src\main\AndroidManifest.xml:8:22-76
+15    <uses-permission android:name="android.permission.CAMERA" />
+15-->C:\Users\Bambang\Documents\DUITKU PROJECT\DUITKU\SDK\NEW SDK 02012019\SDK BARU\newPersonalia\EStudy\app\src\main\AndroidManifest.xml:9:5-65
+15-->C:\Users\Bambang\Documents\DUITKU PROJECT\DUITKU\SDK\NEW SDK 02012019\SDK BARU\newPersonalia\EStudy\app\src\main\AndroidManifest.xml:9:22-62
+16    <uses-permission android:name="android.permission.FLASHLIGHT" />
+16-->C:\Users\Bambang\Documents\DUITKU PROJECT\DUITKU\SDK\NEW SDK 02012019\SDK BARU\newPersonalia\EStudy\app\src\main\AndroidManifest.xml:10:5-69
+16-->C:\Users\Bambang\Documents\DUITKU PROJECT\DUITKU\SDK\NEW SDK 02012019\SDK BARU\newPersonalia\EStudy\app\src\main\AndroidManifest.xml:10:22-66
+17
+18    <application
+18-->C:\Users\Bambang\Documents\DUITKU PROJECT\DUITKU\SDK\NEW SDK 02012019\SDK BARU\newPersonalia\EStudy\app\src\main\AndroidManifest.xml:12:5-32:19
+19        android:allowBackup="true"
+19-->C:\Users\Bambang\Documents\DUITKU PROJECT\DUITKU\SDK\NEW SDK 02012019\SDK BARU\newPersonalia\EStudy\app\src\main\AndroidManifest.xml:13:9-35
+20        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+20-->[androidx.core:core:1.1.0] C:\Users\Bambang\.gradle\caches\transforms-2\files-2.1\e9dab9c67c1ee3668e0bbf86c6d8cbd8\core-1.1.0\AndroidManifest.xml:24:18-86
+21        android:debuggable="true"
+22        android:icon="@mipmap/ic_launcher"
+22-->C:\Users\Bambang\Documents\DUITKU PROJECT\DUITKU\SDK\NEW SDK 02012019\SDK BARU\newPersonalia\EStudy\app\src\main\AndroidManifest.xml:14:9-43
+23        android:label="@string/app_name"
+23-->C:\Users\Bambang\Documents\DUITKU PROJECT\DUITKU\SDK\NEW SDK 02012019\SDK BARU\newPersonalia\EStudy\app\src\main\AndroidManifest.xml:15:9-41
+24        android:roundIcon="@mipmap/ic_launcher_round"
+24-->C:\Users\Bambang\Documents\DUITKU PROJECT\DUITKU\SDK\NEW SDK 02012019\SDK BARU\newPersonalia\EStudy\app\src\main\AndroidManifest.xml:16:9-54
+25        android:supportsRtl="true"
+25-->C:\Users\Bambang\Documents\DUITKU PROJECT\DUITKU\SDK\NEW SDK 02012019\SDK BARU\newPersonalia\EStudy\app\src\main\AndroidManifest.xml:17:9-35
+26        android:testOnly="true"
+27        android:theme="@style/AppTheme"
+27-->C:\Users\Bambang\Documents\DUITKU PROJECT\DUITKU\SDK\NEW SDK 02012019\SDK BARU\newPersonalia\EStudy\app\src\main\AndroidManifest.xml:18:9-40
+28        android:usesCleartextTraffic="true" >
+28-->C:\Users\Bambang\Documents\DUITKU PROJECT\DUITKU\SDK\NEW SDK 02012019\SDK BARU\newPersonalia\EStudy\app\src\main\AndroidManifest.xml:19:9-44
+29        <activity android:name="com.duitku.e_study.Menu.Quiz" />
+29-->C:\Users\Bambang\Documents\DUITKU PROJECT\DUITKU\SDK\NEW SDK 02012019\SDK BARU\newPersonalia\EStudy\app\src\main\AndroidManifest.xml:20:9-56
+29-->C:\Users\Bambang\Documents\DUITKU PROJECT\DUITKU\SDK\NEW SDK 02012019\SDK BARU\newPersonalia\EStudy\app\src\main\AndroidManifest.xml:20:19-44
+30        <activity android:name="com.duitku.e_study.Menu.DetailMateri" />
+30-->C:\Users\Bambang\Documents\DUITKU PROJECT\DUITKU\SDK\NEW SDK 02012019\SDK BARU\newPersonalia\EStudy\app\src\main\AndroidManifest.xml:21:9-55
+30-->C:\Users\Bambang\Documents\DUITKU PROJECT\DUITKU\SDK\NEW SDK 02012019\SDK BARU\newPersonalia\EStudy\app\src\main\AndroidManifest.xml:21:19-52
+31        <activity android:name="com.duitku.e_study.MainActivity" />
+31-->C:\Users\Bambang\Documents\DUITKU PROJECT\DUITKU\SDK\NEW SDK 02012019\SDK BARU\newPersonalia\EStudy\app\src\main\AndroidManifest.xml:22:9-50
+31-->C:\Users\Bambang\Documents\DUITKU PROJECT\DUITKU\SDK\NEW SDK 02012019\SDK BARU\newPersonalia\EStudy\app\src\main\AndroidManifest.xml:22:19-47
+32        <activity android:name="com.duitku.e_study.Menu.InputQuiz" />
+32-->C:\Users\Bambang\Documents\DUITKU PROJECT\DUITKU\SDK\NEW SDK 02012019\SDK BARU\newPersonalia\EStudy\app\src\main\AndroidManifest.xml:23:9-52
+32-->C:\Users\Bambang\Documents\DUITKU PROJECT\DUITKU\SDK\NEW SDK 02012019\SDK BARU\newPersonalia\EStudy\app\src\main\AndroidManifest.xml:23:19-49
+33        <activity android:name="com.duitku.e_study.Auth.RegisterActivity" />
+33-->C:\Users\Bambang\Documents\DUITKU PROJECT\DUITKU\SDK\NEW SDK 02012019\SDK BARU\newPersonalia\EStudy\app\src\main\AndroidManifest.xml:24:9-59
+33-->C:\Users\Bambang\Documents\DUITKU PROJECT\DUITKU\SDK\NEW SDK 02012019\SDK BARU\newPersonalia\EStudy\app\src\main\AndroidManifest.xml:24:19-56
+34        <activity android:name="com.duitku.e_study.Auth.LoginActivity" >
+34-->C:\Users\Bambang\Documents\DUITKU PROJECT\DUITKU\SDK\NEW SDK 02012019\SDK BARU\newPersonalia\EStudy\app\src\main\AndroidManifest.xml:25:9-31:20
+34-->C:\Users\Bambang\Documents\DUITKU PROJECT\DUITKU\SDK\NEW SDK 02012019\SDK BARU\newPersonalia\EStudy\app\src\main\AndroidManifest.xml:25:19-53
+35            <intent-filter>
+35-->C:\Users\Bambang\Documents\DUITKU PROJECT\DUITKU\SDK\NEW SDK 02012019\SDK BARU\newPersonalia\EStudy\app\src\main\AndroidManifest.xml:26:13-30:29
+36                <action android:name="android.intent.action.MAIN" />
+36-->C:\Users\Bambang\Documents\DUITKU PROJECT\DUITKU\SDK\NEW SDK 02012019\SDK BARU\newPersonalia\EStudy\app\src\main\AndroidManifest.xml:27:17-69
+36-->C:\Users\Bambang\Documents\DUITKU PROJECT\DUITKU\SDK\NEW SDK 02012019\SDK BARU\newPersonalia\EStudy\app\src\main\AndroidManifest.xml:27:25-66
+37
+38                <category android:name="android.intent.category.LAUNCHER" />
+38-->C:\Users\Bambang\Documents\DUITKU PROJECT\DUITKU\SDK\NEW SDK 02012019\SDK BARU\newPersonalia\EStudy\app\src\main\AndroidManifest.xml:29:17-77
+38-->C:\Users\Bambang\Documents\DUITKU PROJECT\DUITKU\SDK\NEW SDK 02012019\SDK BARU\newPersonalia\EStudy\app\src\main\AndroidManifest.xml:29:27-74
+39            </intent-filter>
+40        </activity>
+41        <activity
+41-->[com.karumi:dexter:5.0.0] C:\Users\Bambang\.gradle\caches\transforms-2\files-2.1\38034459026c41f94cbbce4f2f904305\jetified-dexter-5.0.0\AndroidManifest.xml:27:9-29:72
+42            android:name="com.karumi.dexter.DexterActivity"
+42-->[com.karumi:dexter:5.0.0] C:\Users\Bambang\.gradle\caches\transforms-2\files-2.1\38034459026c41f94cbbce4f2f904305\jetified-dexter-5.0.0\AndroidManifest.xml:28:13-60
+43            android:theme="@style/Dexter.Internal.Theme.Transparent" />
+43-->[com.karumi:dexter:5.0.0] C:\Users\Bambang\.gradle\caches\transforms-2\files-2.1\38034459026c41f94cbbce4f2f904305\jetified-dexter-5.0.0\AndroidManifest.xml:29:13-69
+44    </application>
+45
+46</manifest>
