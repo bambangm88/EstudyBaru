@@ -1,8 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.huangyz0918:androidwm:0.2.3@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3207d0cca57f16721de202fe687510ad/jetified-androidwm-0.2.3/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3207d0cca57f16721de202fe687510ad/jetified-androidwm-0.2.3/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/28fc2d9d740c853b2f14eb34991a7735/jetified-androidwm-0.2.3/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/28fc2d9d740c853b2f14eb34991a7735/jetified-androidwm-0.2.3/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/28fc2d9d740c853b2f14eb34991a7735/jetified-androidwm-0.2.3/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.huangyz0918/androidwm/0.2.3/662e10668d8583f212522342b9840ba0485e9b14/androidwm-0.2.3-javadoc.jar!/" />
