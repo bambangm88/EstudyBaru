@@ -12,7 +12,8 @@ public class JsonQuiz {
     @SerializedName("id_quiz")
     private String id_quiz ;
 
-
+    @SerializedName("image_string")
+    private String image_string ;
 
     @SerializedName("soal")
     private String soal;
@@ -96,6 +97,14 @@ public class JsonQuiz {
         this.id_quiz = id_quiz;
     }
 
+
+    public String getImage_string() {
+        return image_string;
+    }
+
+    public void setImage_string(String image_string) {
+        this.image_string = image_string;
+    }
 
 
 

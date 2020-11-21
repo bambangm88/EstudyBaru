@@ -29,6 +29,19 @@ public class DataListQuiz {
     @SerializedName("jawaban_isi")
     private String jawaban_isi;
 
+    @SerializedName("image")
+    private String image;
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+
+
     public String getId_materi() {
         return id_materi;
     }

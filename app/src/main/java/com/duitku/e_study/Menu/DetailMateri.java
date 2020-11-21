@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.duitku.e_study.Constant.Constant;
 import com.duitku.e_study.R;
 
 public class DetailMateri extends AppCompatActivity {
@@ -38,7 +39,8 @@ public class DetailMateri extends AppCompatActivity {
 
         materi.setText(_materi);
         title.setText(_title);
-        Glide.with(this).load(imgUrl).into(imgMateri);
+
+        Glide.with(this).load(Constant.BASE_URL_IMAGE_MATERI+imgUrl).into(imgMateri);
 
         addQuiz.setOnClickListener(new View.OnClickListener() {
             @Override

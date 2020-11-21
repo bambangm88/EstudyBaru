@@ -18,7 +18,9 @@ import com.duitku.e_study.Auth.RegisterActivity;
 import com.duitku.e_study.Menu.About;
 import com.duitku.e_study.Menu.ChooseQuiz;
 import com.duitku.e_study.Menu.Materi;
+import com.duitku.e_study.Model.Data.DataLogin;
 import com.duitku.e_study.Session.SessionManager;
+import com.duitku.e_study.Util.Helper;
 
 public class MenuUtama extends AppCompatActivity {
 
@@ -65,6 +67,7 @@ public class MenuUtama extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        Helper.requestMultiplePermissions(this);
     }
 
 
@@ -107,6 +110,17 @@ public class MenuUtama extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+
+        MenuItem addsiswa = menu.findItem(R.id.addsiswa);
+
+
+        SessionManager session = new SessionManager(MenuUtama.this);
+        DataLogin user = Helper.DecodeFromJsonResponseLogin(session.getInstanceUser());
+
+        if (!user.getLevel().equals("SISWA")) {
+            addsiswa.setVisible(true);
+        }
+
         return true;
     }
 
@@ -117,10 +131,15 @@ public class MenuUtama extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
+
+
+
         if (id == R.id.addsiswa) {
             startActivity(new Intent(MenuUtama.this, RegisterActivity.class));
             return true;
         }
+
+
 
         if (id == R.id.changePassword) {
             startActivity(new Intent(MenuUtama.this, ChangePassword.class));

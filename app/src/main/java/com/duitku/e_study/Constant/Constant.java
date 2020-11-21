@@ -6,6 +6,8 @@ public class Constant {
     public static final String PWD_AUTH = "123";
     public static final String KEY_AUTH = "fe004a26600ebddca44b1515771e04ac7e54a1e5382ee84231577aa8f150bdc7";
     public static final String BASE_URL_API = "http://project.opus-id.com/Api/index.php/";
+    public static final String BASE_URL_IMAGE_MATERI = "http://project.opus-id.com/Api/foto_materi/";
+    public static final String BASE_URL_IMAGE_QUIZ = "http://project.opus-id.com/Api/foto_quiz/";
 
     public static final String ERR_200 = "200";
     public static final String ERR_1 = "1";

@@ -217,6 +217,7 @@
             android:orientation="vertical">
 
             <ImageView
+                android:src="@mipmap/logo"
                 android:id="@+id/logo"
                 android:layout_width="50dp"
                 android:layout_height="50dp"

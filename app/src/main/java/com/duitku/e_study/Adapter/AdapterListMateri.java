@@ -23,14 +23,18 @@ import com.duitku.e_study.Api.ApiService;
 import com.duitku.e_study.Api.Server;
 import com.duitku.e_study.Constant.Constant;
 import com.duitku.e_study.Menu.DetailMateri;
+import com.duitku.e_study.Menu.EditMateri;
+import com.duitku.e_study.Menu.EditQuiz;
 import com.duitku.e_study.Menu.Materi;
 import com.duitku.e_study.Menu.Quiz;
 import com.duitku.e_study.Model.Data.DataListMateri;
+import com.duitku.e_study.Model.Data.DataLogin;
 import com.duitku.e_study.Model.json.JsonMateri;
 import com.duitku.e_study.Model.json.JsonQuiz;
 import com.duitku.e_study.Model.response.ResponseData;
 import com.duitku.e_study.R;
 import com.duitku.e_study.Session.SessionManager;
+import com.duitku.e_study.Util.Helper;
 
 import java.util.List;
 
@@ -73,7 +77,7 @@ public class AdapterListMateri extends RecyclerView.Adapter< AdapterListMateri.A
 
        holder.texttitle.setText(title);
 
-       Glide.with(mContext).load(img_url).into(holder.imgMateri);
+       Glide.with(mContext).load(Constant.BASE_URL_IMAGE_MATERI+img_url).into(holder.imgMateri);
 
        holder.cvMateri.setOnClickListener(new View.OnClickListener() {
            @Override
@@ -88,40 +92,52 @@ public class AdapterListMateri extends RecyclerView.Adapter< AdapterListMateri.A
        });
 
 
-       holder.cvMateri.setOnLongClickListener(new View.OnLongClickListener() {
-           @Override
-           public boolean onLongClick(View view) {
+        SessionManager session = new SessionManager(mContext);
+        DataLogin user = Helper.DecodeFromJsonResponseLogin(session.getInstanceUser());
 
-               //pass the 'context' here
-               AlertDialog.Builder alertDialog = new AlertDialog.Builder(mContext);
-               alertDialog.setTitle("Action");
-               alertDialog.setMessage("");
-               alertDialog.setPositiveButton("Edit", new DialogInterface.OnClickListener() {
-                   @Override
-                   public void onClick(DialogInterface dialog, int which) {
-                       dialog.cancel();
-                   }
-               });
-               alertDialog.setNegativeButton("Delete", new DialogInterface.OnClickListener() {
-                   @Override
-                   public void onClick(DialogInterface dialog, int which) {
+        if (!user.getLevel().equals("SISWA")) {
+            holder.cvMateri.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View view) {
 
-                       // DO SOMETHING HERE
+                    //pass the 'context' here
+                    AlertDialog.Builder alertDialog = new AlertDialog.Builder(mContext);
+                    alertDialog.setTitle("Action");
+                    alertDialog.setMessage("");
+                    alertDialog.setPositiveButton("Edit", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                            Intent i = new Intent(mContext, EditMateri.class);
 
-                       dialog.cancel();
-                       JsonMateri json = new JsonMateri();
-                       json.setId_materi(idmateri);
-                       deleteMateri(json,idmateri);
+                            i.putExtra("id_materi", idmateri);
+                            i.putExtra("title", title);
+                            i.putExtra("materi", materi);
+                            i.putExtra("url", img_url);
 
-                   }
-               });
+                            mContext.startActivity(i);
+                        }
+                    });
+                    alertDialog.setNegativeButton("Delete", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
 
-               AlertDialog dialog = alertDialog.create();
-               dialog.show();
-               return false;
-           }
-       });
+                            // DO SOMETHING HERE
 
+                            dialog.cancel();
+                            JsonMateri json = new JsonMateri();
+                            json.setId_materi(idmateri);
+                            deleteMateri(json, idmateri);
+
+                        }
+                    });
+
+                    AlertDialog dialog = alertDialog.create();
+                    dialog.show();
+                    return false;
+                }
+            });
+        }
 
 
 

@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,15 +24,18 @@ import com.bumptech.glide.Glide;
 
 import com.duitku.e_study.Api.ApiService;
 import com.duitku.e_study.Api.Server;
+import com.duitku.e_study.Auth.ChangePassword;
 import com.duitku.e_study.Constant.Constant;
 import com.duitku.e_study.Menu.DetailMateri;
 import com.duitku.e_study.Menu.EditQuiz;
 import com.duitku.e_study.Menu.Quiz;
 import com.duitku.e_study.Model.Data.DataListQuiz;
+import com.duitku.e_study.Model.Data.DataLogin;
 import com.duitku.e_study.Model.json.JsonQuiz;
 import com.duitku.e_study.Model.response.ResponseData;
 import com.duitku.e_study.R;
 import com.duitku.e_study.Session.SessionManager;
+import com.duitku.e_study.Util.Helper;
 
 import java.util.List;
 
@@ -66,6 +70,7 @@ public class AdapterListQuiz extends RecyclerView.Adapter< AdapterListQuiz.Adapt
     public void onBindViewHolder(AdapterHolder holder, int position) {
         final DataListQuiz quiz = AllQuizList.get(position);
 
+
         String idQuiz = quiz.getId_quiz();
         String idMateri = quiz.getId_materi();
         String soal = quiz.getSoal();
@@ -74,6 +79,12 @@ public class AdapterListQuiz extends RecyclerView.Adapter< AdapterListQuiz.Adapt
         String jawaban_c = quiz.getJawaban_c();
         String jawaban_d = quiz.getJawaban_d();
         String jawaban_isi = quiz.getJawaban_isi();
+        String imgUrl = quiz.getImage();
+
+        if (!imgUrl.equals("")){
+            holder.ivimage.setVisibility(View.VISIBLE);
+            Glide.with(mContext).load(Constant.BASE_URL_IMAGE_QUIZ+imgUrl).into(holder.ivimage);
+        }
 
 
         holder.textsoal.setText(soal);
@@ -118,49 +129,54 @@ public class AdapterListQuiz extends RecyclerView.Adapter< AdapterListQuiz.Adapt
             }
         });
 
-        holder.cvQuiz.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View view) {
+        SessionManager session = new SessionManager(mContext);
+        DataLogin user = Helper.DecodeFromJsonResponseLogin(session.getInstanceUser());
 
-                //pass the 'context' here
-                AlertDialog.Builder alertDialog = new AlertDialog.Builder(mContext);
-                alertDialog.setTitle("Action");
-                alertDialog.setMessage("");
-                alertDialog.setPositiveButton("Edit", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                        Intent i = new Intent(mContext, EditQuiz.class);
-                        i.putExtra("idQuiz", idQuiz);
-                        i.putExtra("idMateri", idMateri);
-                        i.putExtra("soal", soal);
-                        i.putExtra("jawaban_a", jawaban_a);
-                        i.putExtra("jawaban_b", jawaban_b);
-                        i.putExtra("jawaban_c", jawaban_c);
-                        i.putExtra("jawaban_d", jawaban_d);
-                        i.putExtra("jawaban_isi", jawaban_isi);
-                        mContext.startActivity(i);
-                    }
-                });
-                alertDialog.setNegativeButton("Delete", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
+        if (!user.getLevel().equals("SISWA")) {
+            holder.cvQuiz.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View view) {
 
-                        // DO SOMETHING HERE
-                        dialog.cancel();
-                        JsonQuiz json = new JsonQuiz();
-                        json.setId_quiz(idQuiz);
-                        deleteQuiz(json,idQuiz);
+                    //pass the 'context' here
+                    AlertDialog.Builder alertDialog = new AlertDialog.Builder(mContext);
+                    alertDialog.setTitle("Action");
+                    alertDialog.setMessage("");
+                    alertDialog.setPositiveButton("Edit", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                            Intent i = new Intent(mContext, EditQuiz.class);
+                            i.putExtra("idQuiz", idQuiz);
+                            i.putExtra("idMateri", idMateri);
+                            i.putExtra("soal", soal);
+                            i.putExtra("jawaban_a", jawaban_a);
+                            i.putExtra("jawaban_b", jawaban_b);
+                            i.putExtra("jawaban_c", jawaban_c);
+                            i.putExtra("jawaban_d", jawaban_d);
+                            i.putExtra("jawaban_isi", jawaban_isi);
+                            i.putExtra("image", imgUrl);
+                            mContext.startActivity(i);
+                        }
+                    });
+                    alertDialog.setNegativeButton("Delete", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
 
-                    }
-                });
+                            // DO SOMETHING HERE
+                            dialog.cancel();
+                            JsonQuiz json = new JsonQuiz();
+                            json.setId_quiz(idQuiz);
+                            deleteQuiz(json, idQuiz);
 
-                AlertDialog dialog = alertDialog.create();
-                dialog.show();
-                return false;
-            }
-        });
+                        }
+                    });
 
+                    AlertDialog dialog = alertDialog.create();
+                    dialog.show();
+                    return false;
+                }
+            });
+        }
 
     }
 
@@ -177,6 +193,7 @@ public class AdapterListQuiz extends RecyclerView.Adapter< AdapterListQuiz.Adapt
         LinearLayout cvJawaban ;
         TextView jawaban ,jawabanX ;
         CardView cvQuiz ;
+        ImageView ivimage ;
 
         public AdapterHolder(View itemView) {
             super(itemView);
@@ -194,6 +211,7 @@ public class AdapterListQuiz extends RecyclerView.Adapter< AdapterListQuiz.Adapt
             jawabanX = itemView.findViewById(R.id.jawabanX);
             rbGroup = itemView.findViewById(R.id.opsi);
             cvQuiz = itemView.findViewById(R.id.cvQuiz);
+            ivimage = itemView.findViewById(R.id.imgQuiz);
 
         }
     }

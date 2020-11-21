@@ -31,10 +31,12 @@ import com.duitku.e_study.Auth.RegisterActivity;
 import com.duitku.e_study.Constant.Constant;
 import com.duitku.e_study.MenuUtama;
 import com.duitku.e_study.Model.Data.DataListQuiz;
+import com.duitku.e_study.Model.Data.DataLogin;
 import com.duitku.e_study.Model.json.JsonListQuiz;
 import com.duitku.e_study.Model.response.ResponseListQuiz;
 import com.duitku.e_study.R;
 import com.duitku.e_study.Session.SessionManager;
+import com.duitku.e_study.Util.Helper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -73,14 +75,21 @@ public class Quiz extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
+        mContext = this ;
+        SessionManager session = new SessionManager(mContext);
+        DataLogin user = Helper.DecodeFromJsonResponseLogin(session.getInstanceUser());
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        if (!user.getLevel().equals("SISWA")) {
+
+            Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+            setSupportActionBar(toolbar);
+
+        }
 
         Bundle bundle=getIntent().getExtras();
         String idmateri = bundle.getString("idMateri");
 
-        mContext = this ;
+
         API = Server.getAPIService();
 
         rlprogress = findViewById(R.id.rlprogress);
@@ -296,13 +305,5 @@ public class Quiz extends AppCompatActivity {
     }
 
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Bundle bundle=getIntent().getExtras();
-        String idmateri = bundle.getString("idMateri");
-        JsonListQuiz json = new JsonListQuiz();
-        json.setId_materi(idmateri);
-        listQuiz(json);
-    }
+
 }

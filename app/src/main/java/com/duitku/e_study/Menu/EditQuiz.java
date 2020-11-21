@@ -1,24 +1,45 @@
 package com.duitku.e_study.Menu;
 
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.media.ExifInterface;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.FileProvider;
 
+import com.bumptech.glide.Glide;
 import com.duitku.e_study.Api.ApiService;
 import com.duitku.e_study.Api.Server;
+import com.duitku.e_study.BuildConfig;
 import com.duitku.e_study.Constant.Constant;
 import com.duitku.e_study.Model.json.JsonQuiz;
 import com.duitku.e_study.Model.response.ResponseData;
 import com.duitku.e_study.R;
 import com.duitku.e_study.Session.SessionManager;
+import com.duitku.e_study.Util.Helper;
+
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -33,10 +54,15 @@ public class EditQuiz extends AppCompatActivity {
     private Context mContext ;
     private SessionManager sessionManager ;
     private RelativeLayout rlprogress;
+    private static String imageID  = "";
+    private ImageView ivImage ;
+    private int GALLERY = 4, CAMERA = 2;
+    static final int REQUEST_TAKE_PHOTO = 2;
+    String currentPhotoPath;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_input_quiz);
+        setContentView(R.layout.activity_edit_quiz);
 
         API = Server.getAPIService();
         mContext = this ;
@@ -51,15 +77,32 @@ public class EditQuiz extends AppCompatActivity {
         rlprogress = findViewById(R.id.rlprogress);
         btnSubmit = findViewById(R.id.btnSubmit);
 
+        ivImage = findViewById(R.id.ivimage);
+
+        ivImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                showPictureDialog();
+                //takePhotoFromCamera();
+            }
+        });
+
         Bundle bundle=getIntent().getExtras();
         String XidQuiz = bundle.getString("idQuiz");
         String Xdmateri = bundle.getString("idMateri");
+        String Ximage = bundle.getString("image");
         soal.setText(bundle.getString("soal"));
         jawaban_a.setText(bundle.getString("jawaban_a"));
         jawaban_b.setText(bundle.getString("jawaban_b"));
         jawaban_c.setText(bundle.getString("jawaban_c"));
         jawaban_d.setText(bundle.getString("jawaban_d"));
 
+        if (!Ximage.equals("")) {
+            Log.e("TAG", "onCreate: ada image" );
+            imageID = "ISI";
+            Glide.with(mContext).load(Constant.BASE_URL_IMAGE_QUIZ+ Ximage).into(ivImage);
+        }
 
         if (bundle.getString("jawaban_isi").toLowerCase().equals("a")){
             jawaban_soal.setSelection(0);
@@ -84,6 +127,13 @@ public class EditQuiz extends AppCompatActivity {
                 String _jawaban_d = jawaban_d.getText().toString();
                 String _jawaban_soal = jawaban_soal.getSelectedItem().toString();
 
+                String image = "" ;
+
+                //check image is include
+                if (imageID.equals("ISI")) {
+                    image = Helper.getStringImage(Helper.imageView2Bitmap(ivImage));
+                }
+
                 if (_soal.equals("")){
                     soal.setError("required");
                 }else  if (_jawaban_a.equals("")){
@@ -105,6 +155,7 @@ public class EditQuiz extends AppCompatActivity {
                     jsonQuiz.setJawaban_c(_jawaban_c);
                     jsonQuiz.setJawaban_d(_jawaban_d);
                     jsonQuiz.setJawaban_isi(_jawaban_soal);
+                    jsonQuiz.setImage_string(image);
                     editQuiz(jsonQuiz);
 
                 }
@@ -175,6 +226,171 @@ public class EditQuiz extends AppCompatActivity {
         jawaban_b.setText("");
         jawaban_c.setText("");
         jawaban_d.setText("");
+    }
+
+
+    private void takePhotoFromCamera() {
+        // Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        //startActivityForResult(intent, CAMERA);
+
+        dispatchTakePictureIntent();
+
+    }
+
+    public void choosePhotoFromGallary() {
+        Intent galleryIntent = new Intent(Intent.ACTION_PICK,
+                MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+
+        startActivityForResult(galleryIntent, GALLERY);
+    }
+
+
+    private void dispatchTakePictureIntent() {
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        // Ensure that there's a camera activity to handle the intent
+        if (takePictureIntent.resolveActivity(mContext.getPackageManager()) != null) {
+            // Create the File where the photo should go
+            File photoFile = null;
+            try {
+                photoFile = createImageFile();
+            } catch (IOException ex) {
+                // Error occurred while creating the File
+
+            }
+            // Continue only if the File was successfully created
+            if (photoFile != null) {
+                Uri photoURI = FileProvider.getUriForFile(mContext,
+                        BuildConfig.APPLICATION_ID + ".provider",
+                        photoFile);
+                takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
+                startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);
+            }
+        }
+    }
+
+    private File createImageFile() throws IOException {
+        // Create an image file name
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        String imageFileName = "JPEG_" + timeStamp + "_";
+        File storageDir = mContext.getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        File image = File.createTempFile(
+                imageFileName,  /* prefix */
+                ".jpg",         /* suffix */
+                storageDir      /* directory */
+        );
+
+        // Save a file: path for use with ACTION_VIEW intents
+        currentPhotoPath = image.getAbsolutePath();
+        return image;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+
+        if (resultCode == 0) {
+            return;
+        }
+
+
+
+
+        if (requestCode == CAMERA) {
+            //Bitmap thumbnail = (Bitmap) data.getExtras().get("data");
+
+
+            // Get the dimensions of the View
+            int targetW = 1000;
+            int targetH = 1000;
+
+            // Get the dimensions of the bitmap
+            BitmapFactory.Options bmOptions = new BitmapFactory.Options();
+            bmOptions.inJustDecodeBounds = true;
+
+            BitmapFactory.decodeFile(currentPhotoPath, bmOptions);
+
+            int photoW = bmOptions.outWidth;
+            int photoH = bmOptions.outHeight;
+
+            // Determine how much to scale down the image
+            int scaleFactor = Math.max(1, Math.min(photoW/targetW, photoH/targetH));
+
+            // Decode the image file into a Bitmap sized to fill the View
+            bmOptions.inJustDecodeBounds = false;
+            bmOptions.inSampleSize = scaleFactor;
+            bmOptions.inPurgeable = true;
+
+            Bitmap bitmap = BitmapFactory.decodeFile(currentPhotoPath, bmOptions);
+
+            ExifInterface exif = null;
+            try {
+                exif = new ExifInterface(currentPhotoPath);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            int orientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION,
+                    ExifInterface.ORIENTATION_UNDEFINED);
+
+            Bitmap bmRotated = Helper.rotateBitmap(bitmap, orientation);
+
+            // addStampToImage(bmRotated);
+            // bmRotated = Helper.waterMark(bmRotated, Helper.getDateTimeNow(),  Color.RED, 90, 90, true);
+
+            ivImage.setImageBitmap(bmRotated);
+            imageID = "ISI" ;
+
+        }
+
+        if (requestCode == GALLERY) {
+            if (data != null) {
+                Uri contentURI = data.getData();
+                try {
+
+                    Bitmap thumbnail  = MediaStore.Images.Media.getBitmap(mContext.getContentResolver(), contentURI);
+
+
+                    ivImage.setImageBitmap(thumbnail);
+                    imageID = "ISI";
+
+
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    Toast.makeText(mContext, "Failed!", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+        }
+
+
+
+
+
+    }
+
+
+    private void showPictureDialog(){
+        AlertDialog.Builder pictureDialog = new AlertDialog.Builder(mContext);
+        pictureDialog.setTitle("Select Action");
+        String[] pictureDialogItems = {
+                "Select berkas from gallery",
+                "Capture berkas from camera" };
+        pictureDialog.setItems(pictureDialogItems,
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        switch (which) {
+                            case 0:
+                                choosePhotoFromGallary();
+                                break;
+                            case 1:
+                                takePhotoFromCamera();
+                                break;
+                        }
+                    }
+                });
+        pictureDialog.show();
     }
 
 

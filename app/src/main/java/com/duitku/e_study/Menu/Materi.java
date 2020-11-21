@@ -31,9 +31,11 @@ import com.duitku.e_study.Auth.RegisterActivity;
 import com.duitku.e_study.Constant.Constant;
 import com.duitku.e_study.MenuUtama;
 import com.duitku.e_study.Model.Data.DataListMateri;
+import com.duitku.e_study.Model.Data.DataLogin;
 import com.duitku.e_study.Model.response.ResponseListMateri;
 import com.duitku.e_study.R;
 import com.duitku.e_study.Session.SessionManager;
+import com.duitku.e_study.Util.Helper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,11 +69,16 @@ public class Materi extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
         mContext = this ;
+
+        SessionManager session = new SessionManager(mContext);
+        DataLogin user = Helper.DecodeFromJsonResponseLogin(session.getInstanceUser());
+
+        if (!user.getLevel().equals("SISWA")) {
+            Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+            setSupportActionBar(toolbar);
+        }
+
         API = Server.getAPIService();
 
         rlprogress = findViewById(R.id.rlprogress);
@@ -84,6 +91,7 @@ public class Materi extends AppCompatActivity {
 
         Adapter = new AdapterListMateri(this,AllMateriList);
 
+        AllMateriList.clear();
         listMateri();
 
 
@@ -94,17 +102,12 @@ public class Materi extends AppCompatActivity {
 
 
 
-
-
-
-
-
-
-
     private void listMateri(){
 
         showProgress(true);
 
+        AllMateriList.clear();
+        Adapter.notifyDataSetChanged();
         Call<ResponseListMateri> call = API.listMateri();
         call.enqueue(new Callback<ResponseListMateri>() {
             @Override
@@ -179,5 +182,9 @@ public class Materi extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
 
+    }
 }

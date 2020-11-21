@@ -33,6 +33,14 @@ public interface ApiService {
     Call<ResponseData> requestAddQuiz(@Body JsonQuiz body);
 
     @Headers("Content-Type: application/json")
+    @POST("siswa/addMateri")
+    Call<ResponseData> requestAddMateri(@Body JsonMateri body);
+
+    @Headers("Content-Type: application/json")
+    @POST("siswa/editMateri")
+    Call<ResponseData> requestEditMateri(@Body JsonMateri body);
+
+    @Headers("Content-Type: application/json")
     @POST("siswa/editQuiz")
     Call<ResponseData> requestEditQuiz(@Body JsonQuiz body);
 

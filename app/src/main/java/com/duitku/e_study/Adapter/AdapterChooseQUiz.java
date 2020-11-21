@@ -12,6 +12,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.duitku.e_study.Constant.Constant;
 import com.duitku.e_study.Menu.DetailMateri;
 import com.duitku.e_study.Menu.Quiz;
 import com.duitku.e_study.Model.Data.DataListMateri;
@@ -56,7 +57,7 @@ public class AdapterChooseQUiz extends RecyclerView.Adapter< AdapterChooseQUiz.A
 
        holder.texttitle.setText(title);
 
-       Glide.with(mContext).load(img_url).into(holder.imgMateri);
+        Glide.with(mContext).load(Constant.BASE_URL_IMAGE_MATERI+img_url).into(holder.imgMateri);
 
        holder.cvMateri.setOnClickListener(new View.OnClickListener() {
            @Override
