@@ -81,6 +81,7 @@
             android:layout_height="wrap_content"/>
 
         <TextView
+            android:visibility="gone"
             android:layout_marginTop="10dp"
             android:layout_gravity="center"
             android:textAlignment="center"
@@ -97,14 +98,10 @@
 
     </LinearLayout>
 
-
-
     </ScrollView>
 
-
-
-
     <Button
+        android:visibility="gone"
         android:textColor="@color/white"
         android:text="QUIZ"
         android:id="@+id/btnQuiz"

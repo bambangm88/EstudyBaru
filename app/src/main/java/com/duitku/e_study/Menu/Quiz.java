@@ -8,19 +8,28 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.developer.kalert.KAlertDialog;
 import com.duitku.e_study.Adapter.AdapterListQuiz;
 import com.duitku.e_study.Api.ApiService;
 import com.duitku.e_study.Api.Server;
+import com.duitku.e_study.Auth.RegisterActivity;
 import com.duitku.e_study.Constant.Constant;
+import com.duitku.e_study.MenuUtama;
 import com.duitku.e_study.Model.Data.DataListQuiz;
 import com.duitku.e_study.Model.json.JsonListQuiz;
 import com.duitku.e_study.Model.response.ResponseListQuiz;
@@ -50,9 +59,12 @@ public class Quiz extends AppCompatActivity {
     private EditText etStartDate , etEndDate ;
 
     private Button btnCari ;
+    private Button btnNilai ;
 
     private RelativeLayout rlprogress;
     private SessionManager sessionManager ;
+
+    private ArrayList<String> arrayJawaban = new ArrayList<>();
     
     
 
@@ -72,6 +84,7 @@ public class Quiz extends AppCompatActivity {
         API = Server.getAPIService();
 
         rlprogress = findViewById(R.id.rlprogress);
+        btnNilai = findViewById(R.id.btnNilai);
         sessionManager = new SessionManager(this);
 
         rvQuiz = findViewById(R.id.rvQuiz);
@@ -83,6 +96,112 @@ public class Quiz extends AppCompatActivity {
         JsonListQuiz json = new JsonListQuiz();
         json.setId_materi(idmateri);
         listQuiz(json);
+
+        btnNilai.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                int checked = 0;
+                arrayJawaban.clear();
+                for (int i = 0; i < rvQuiz.getChildCount(); i++) {
+
+                    try {
+                        RadioGroup rb = rvQuiz.getChildAt(i).findViewById(R.id.opsi);
+                        // Check which radio button was clicked
+                        int checkedRadioButtonId = rb.getCheckedRadioButtonId();
+                        if (checkedRadioButtonId == -1) {
+                            // No item selected
+
+                        }
+                        else{
+                            if (checkedRadioButtonId == R.id.jawaban_a) {
+                                // Do something with the button
+                                checked ++ ;
+
+                            }
+
+                            if (checkedRadioButtonId == R.id.jawaban_b) {
+                                // Do something with the button
+                                checked ++ ;
+                            }
+
+                            if (checkedRadioButtonId == R.id.jawaban_c) {
+                                // Do something with the button
+                                checked ++ ;
+                            }
+
+                            if (checkedRadioButtonId == R.id.jawaban_d) {
+                                // Do something with the button
+                                checked ++ ;
+                            }
+                        }
+
+
+
+                    } catch (NullPointerException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+                if (checked != rvQuiz.getChildCount()){
+
+
+                    new KAlertDialog(Quiz.this, KAlertDialog.WARNING_TYPE)
+                            .setTitleText("Oops...")
+                            .setContentText("Silahkan Jawab Semua Soal")
+                            .setConfirmText("OK") //Do not call this if you don't want to show confirm button
+                            .show();
+
+
+
+                    //Toast.makeText(Quiz.this, "Silahkan Jawab Semua Soal " + rvQuiz.getChildCount(), Toast.LENGTH_SHORT).show();
+                }else{
+
+                    for (int i = 0; i < rvQuiz.getChildCount(); i++) {
+
+                        try {
+                            LinearLayout cv = rvQuiz.getChildAt(i).findViewById(R.id.cvJawaban);
+                            LinearLayout llbg = rvQuiz.getChildAt(i).findViewById(R.id.LLBG);
+                            TextView jawaban = rvQuiz.getChildAt(i).findViewById(R.id.jawaban);
+                            arrayJawaban.add(""+jawaban.getTag());
+                            if (jawaban.getTag().equals("BENAR")){
+                                llbg.setBackgroundColor(Color.GREEN);
+                            }else{
+                                llbg.setBackgroundColor(Color.RED);
+                            }
+
+                            cv.setVisibility(View.VISIBLE);
+                        } catch (NullPointerException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    int countBenar = 0 ;
+                    for (String jawab : arrayJawaban){
+
+                        if (jawab.equals("BENAR")){
+                            countBenar ++;
+                        }
+
+                    }
+
+                    int score =  countBenar * 100 ;
+
+                    new KAlertDialog(Quiz.this, KAlertDialog.SUCCESS_TYPE)
+                            .setTitleText("Selamat !")
+                            .setContentText("Score :" + score)
+                            .setConfirmText("OK") //Do not call this if you don't want to show confirm button
+                            .show();
+
+                    //Toast.makeText(Quiz.this, "Terjawab Benar " + countBenar, Toast.LENGTH_SHORT).show();
+
+
+                }
+
+            }
+        });
+
+
         
     }
 
@@ -150,8 +269,40 @@ public class Quiz extends AppCompatActivity {
 
 
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_quiz, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        if (id == R.id.addquiz) {
+            Bundle bundle=getIntent().getExtras();
+            String idmateri = bundle.getString("idMateri");
+            Intent i = new Intent(Quiz.this, InputQuiz.class);
+            i.putExtra("idMateri", idmateri);
+            startActivity(i);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 
 
-
-
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Bundle bundle=getIntent().getExtras();
+        String idmateri = bundle.getString("idMateri");
+        JsonListQuiz json = new JsonListQuiz();
+        json.setId_materi(idmateri);
+        listQuiz(json);
+    }
 }

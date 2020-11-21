@@ -1,26 +1,44 @@
 package com.duitku.e_study.Adapter;
 
+import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
+import com.duitku.e_study.Api.ApiService;
+import com.duitku.e_study.Api.Server;
+import com.duitku.e_study.Constant.Constant;
+import com.duitku.e_study.Menu.DetailMateri;
+import com.duitku.e_study.Menu.EditQuiz;
+import com.duitku.e_study.Menu.Quiz;
 import com.duitku.e_study.Model.Data.DataListQuiz;
+import com.duitku.e_study.Model.json.JsonQuiz;
+import com.duitku.e_study.Model.response.ResponseData;
 import com.duitku.e_study.R;
 import com.duitku.e_study.Session.SessionManager;
 
 import java.util.List;
 
 import butterknife.ButterKnife;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class AdapterListQuiz extends RecyclerView.Adapter< AdapterListQuiz.AdapterHolder>{
@@ -65,6 +83,85 @@ public class AdapterListQuiz extends RecyclerView.Adapter< AdapterListQuiz.Adapt
         holder.rbjawaban_d.setText("D. "+jawaban_d);
 
 
+        holder.jawaban.setTag("SALAH");
+        holder.jawaban.setText("Jawaban :"+jawaban_isi.toUpperCase());
+        holder.rbGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int id) {
+                switch (id){
+                    case R.id.jawaban_a:
+                        String isi = "A" ;
+                        if (isi.equals(jawaban_isi.toUpperCase())){
+                            holder.jawaban.setTag("BENAR");
+                        }
+                        break;
+                    case R.id.jawaban_b:
+                        String _isi = "B" ;
+                        if (_isi.equals(jawaban_isi.toUpperCase())){
+                            holder.jawaban.setTag("BENAR");
+                        }
+                        break;
+                    case R.id.jawaban_c:
+                        String __isi = "C" ;
+                        if (__isi.equals(jawaban_isi.toUpperCase())){
+                            holder.jawaban.setTag("BENAR");
+                        }
+                        break;
+                    case R.id.jawaban_d:
+
+                        String ___isi = "D" ;
+                        if (___isi.equals(jawaban_isi.toUpperCase())){
+                            holder.jawaban.setTag("BENAR");
+                        }
+                        break;
+                }
+            }
+        });
+
+        holder.cvQuiz.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+
+                //pass the 'context' here
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder(mContext);
+                alertDialog.setTitle("Action");
+                alertDialog.setMessage("");
+                alertDialog.setPositiveButton("Edit", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                        Intent i = new Intent(mContext, EditQuiz.class);
+                        i.putExtra("idQuiz", idQuiz);
+                        i.putExtra("idMateri", idMateri);
+                        i.putExtra("soal", soal);
+                        i.putExtra("jawaban_a", jawaban_a);
+                        i.putExtra("jawaban_b", jawaban_b);
+                        i.putExtra("jawaban_c", jawaban_c);
+                        i.putExtra("jawaban_d", jawaban_d);
+                        i.putExtra("jawaban_isi", jawaban_isi);
+                        mContext.startActivity(i);
+                    }
+                });
+                alertDialog.setNegativeButton("Delete", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        // DO SOMETHING HERE
+                        dialog.cancel();
+                        JsonQuiz json = new JsonQuiz();
+                        json.setId_quiz(idQuiz);
+                        deleteQuiz(json,idQuiz);
+
+                    }
+                });
+
+                AlertDialog dialog = alertDialog.create();
+                dialog.show();
+                return false;
+            }
+        });
+
+
     }
 
     @Override
@@ -76,6 +173,10 @@ public class AdapterListQuiz extends RecyclerView.Adapter< AdapterListQuiz.Adapt
 
         TextView textsoal ;
         RadioButton rbjawaban_a , rbjawaban_b , rbjawaban_c , rbjawaban_d ;
+        RadioGroup rbGroup ;
+        LinearLayout cvJawaban ;
+        TextView jawaban ,jawabanX ;
+        CardView cvQuiz ;
 
         public AdapterHolder(View itemView) {
             super(itemView);
@@ -87,11 +188,65 @@ public class AdapterListQuiz extends RecyclerView.Adapter< AdapterListQuiz.Adapt
             rbjawaban_b = itemView.findViewById(R.id.jawaban_b);
             rbjawaban_c = itemView.findViewById(R.id.jawaban_c);
             rbjawaban_d = itemView.findViewById(R.id.jawaban_d);
+            rbjawaban_d = itemView.findViewById(R.id.jawaban_d);
+            cvJawaban = itemView.findViewById(R.id.cvJawaban);
+            jawaban = itemView.findViewById(R.id.jawaban);
+            jawabanX = itemView.findViewById(R.id.jawabanX);
+            rbGroup = itemView.findViewById(R.id.opsi);
+            cvQuiz = itemView.findViewById(R.id.cvQuiz);
 
         }
     }
 
 
+    private void deleteQuiz(JsonQuiz jsonQuiz, String idMateri){
+
+        ProgressDialog pd = new ProgressDialog(mContext);
+        pd.setMessage("request . .");
+        pd.show();
+
+        ApiService API  = Server.getAPIService();
+        Call<ResponseData> call = API.requestDeleteQuiz(jsonQuiz);
+        call.enqueue(new Callback<ResponseData>() {
+            @Override
+            public void onResponse(Call<ResponseData> call, Response<ResponseData> response) {
+
+                if(response.isSuccessful()) {
+                    pd.cancel();
+                    if (response.body().getMetadata() != null) {
+
+                        String message = response.body().getMetadata().getMessage() ;
+                        String status = response.body().getMetadata().getCode() ;
+
+                        if(status.equals(Constant.ERR_200)){
+                            Toast.makeText(mContext, message, Toast.LENGTH_SHORT).show();
+                            //sessionManager.saveUser(Helper.ConvertResponseDataLoginToJson(response.body()));
+                            Intent i = new Intent(mContext , Quiz.class);
+                            i.putExtra("idMateri", idMateri);
+                            mContext.startActivity(i);
+                            ((Activity)mContext).finish();
+                        }else{
+                            Toast.makeText(mContext, message, Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
+                }
+
+                else{
+                    pd.cancel();
+                    //Log.e("TAG", "onResponse: "+response.body().toString() );
+                    Toast.makeText(mContext, "Server Error", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseData> call, Throwable t) {
+                pd.cancel();
+                Toast.makeText(mContext, t.getMessage(), Toast.LENGTH_SHORT).show();
+
+            }
+        });
+    }
 
 
 

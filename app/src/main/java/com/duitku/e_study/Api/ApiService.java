@@ -4,8 +4,10 @@ package com.duitku.e_study.Api;
 
 
 import com.duitku.e_study.Model.json.JsonAddSiswa;
+import com.duitku.e_study.Model.json.JsonChangePassword;
 import com.duitku.e_study.Model.json.JsonListQuiz;
 import com.duitku.e_study.Model.json.JsonLogin;
+import com.duitku.e_study.Model.json.JsonMateri;
 import com.duitku.e_study.Model.json.JsonPeriod;
 import com.duitku.e_study.Model.json.JsonQuiz;
 import com.duitku.e_study.Model.response.ResponseData;
@@ -31,8 +33,24 @@ public interface ApiService {
     Call<ResponseData> requestAddQuiz(@Body JsonQuiz body);
 
     @Headers("Content-Type: application/json")
+    @POST("siswa/editQuiz")
+    Call<ResponseData> requestEditQuiz(@Body JsonQuiz body);
+
+    @Headers("Content-Type: application/json")
+    @POST("siswa/deleteQuiz")
+    Call<ResponseData> requestDeleteQuiz(@Body JsonQuiz body);
+
+    @Headers("Content-Type: application/json")
+    @POST("siswa/deleteMateri")
+    Call<ResponseData> requestDeleteMateri(@Body JsonMateri body);
+
+    @Headers("Content-Type: application/json")
     @POST("siswa/addSiswa")
     Call<ResponseData> requestAddSiswa(@Body JsonAddSiswa body);
+
+    @Headers("Content-Type: application/json")
+    @POST("siswa/changePassword")
+    Call<ResponseData> requestChangePassword(@Body JsonChangePassword body);
 
     @GET("siswa/listMateri")
     Call<ResponseListMateri> listMateri();

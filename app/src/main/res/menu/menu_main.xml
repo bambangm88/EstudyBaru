@@ -7,10 +7,12 @@
         android:title="Add Siswa"
         app:showAsAction="never"
         />
+
         <item
-        android:id="@+id/keluar"
-        android:title="Keluar"
-        app:showAsAction="never"
-        />
+            android:id="@+id/changePassword"
+            android:title="Change Password"
+            app:showAsAction="never"
+            />
+
 
 </menu>

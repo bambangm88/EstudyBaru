@@ -24,14 +24,19 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true" >
+        <activity android:name="com.duitku.e_study.Menu.About" />
+        <activity android:name="com.duitku.e_study.MenuUtama" />
         <activity android:name="com.duitku.e_study.Menu.Quiz" />
         <activity android:name="com.duitku.e_study.Menu.DetailMateri" />
-        <activity android:name="com.duitku.e_study.MainActivity" />
+        <activity android:name="com.duitku.e_study.Menu.Materi" />
         <activity android:name="com.duitku.e_study.Menu.InputQuiz" />
         <activity android:name="com.duitku.e_study.Auth.RegisterActivity" />
+        <activity android:name="com.duitku.e_study.Menu.EditQuiz" />
+        <activity android:name="com.duitku.e_study.Auth.ChangePassword" />
+        <activity android:name="com.duitku.e_study.Menu.ChooseQuiz" />
+        <activity android:name="com.duitku.e_study.Menu.InputMateri" />
         <activity android:name="com.duitku.e_study.Auth.LoginActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

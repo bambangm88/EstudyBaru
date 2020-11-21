@@ -17,11 +17,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Menu.Quiz"></activity>
+        <activity android:name=".Menu.About"></activity>
+        <activity android:name=".MenuUtama" />
+        <activity android:name=".Menu.Quiz" />
         <activity android:name=".Menu.DetailMateri" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".Menu.Materi" />
         <activity android:name=".Menu.InputQuiz" />
         <activity android:name=".Auth.RegisterActivity" />
+        <activity android:name=".Menu.EditQuiz" />
+        <activity android:name=".Auth.ChangePassword" />
+        <activity android:name=".Menu.ChooseQuiz" />
+        <activity android:name=".Menu.InputMateri" />
         <activity android:name=".Auth.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

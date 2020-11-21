@@ -9,6 +9,11 @@ public class JsonQuiz {
     private String id_materi;
 
 
+    @SerializedName("id_quiz")
+    private String id_quiz ;
+
+
+
     @SerializedName("soal")
     private String soal;
 
@@ -83,6 +88,13 @@ public class JsonQuiz {
         this.jawaban_isi = jawaban_isi;
     }
 
+    public String getId_quiz() {
+        return id_quiz;
+    }
+
+    public void setId_quiz(String id_quiz) {
+        this.id_quiz = id_quiz;
+    }
 
 
 

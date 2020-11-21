@@ -3,7 +3,6 @@ package com.duitku.e_study.Auth;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.duitku.e_study.Api.ApiService;
 import com.duitku.e_study.Api.Server;
 import com.duitku.e_study.Constant.Constant;
-import com.duitku.e_study.MainActivity;
+import com.duitku.e_study.MenuUtama;
 import com.duitku.e_study.Model.json.JsonLogin;
 import com.duitku.e_study.Model.response.ResponseLogin;
 import com.duitku.e_study.R;
@@ -70,6 +69,13 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        //if loggin
+        if (sessionManager.isLoggedIn()){
+            startActivity(new Intent(LoginActivity.this,MenuUtama.class));
+            finish();
+        }
+
+
 
     }
 
@@ -90,8 +96,8 @@ public class LoginActivity extends AppCompatActivity {
 
                         if(status.equals(Constant.ERR_200)){
                             Toast.makeText(mContext, message, Toast.LENGTH_SHORT).show();
-                           //sessionManager.saveUser(Helper.ConvertResponseDataLoginToJson(response.body()));
-                            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                            sessionManager.saveUser(Helper.ConvertResponseDataLoginToJson(response.body().getResponse().getData().get(0)));
+                            startActivity(new Intent(LoginActivity.this, MenuUtama.class));
                             finish();
 
                         }else{

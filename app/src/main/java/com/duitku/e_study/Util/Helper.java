@@ -11,6 +11,9 @@ import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
 
+import com.duitku.e_study.Model.Data.DataLogin;
+import com.google.gson.Gson;
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
@@ -122,8 +125,21 @@ public class Helper {
     }
 
 
+    public static String ConvertResponseDataLoginToJson(DataLogin model) {
+        Gson gson = new Gson();
+        String stringUser = gson.toJson(model);
+        return stringUser;
+    }
 
 
+
+    public static DataLogin DecodeFromJsonResponseLogin (String json){
+        String  jsonString =json; //http request
+        DataLogin data =new DataLogin() ;
+        Gson gson = new Gson();
+        data= gson.fromJson(jsonString,DataLogin.class);
+        return data ;
+    }
 
 
 

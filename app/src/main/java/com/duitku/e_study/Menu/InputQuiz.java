@@ -1,7 +1,6 @@
 package com.duitku.e_study.Menu;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,7 +14,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.duitku.e_study.Api.ApiService;
 import com.duitku.e_study.Api.Server;
 import com.duitku.e_study.Constant.Constant;
-import com.duitku.e_study.MainActivity;
 import com.duitku.e_study.Model.json.JsonQuiz;
 import com.duitku.e_study.Model.response.ResponseData;
 import com.duitku.e_study.R;
@@ -119,7 +117,7 @@ public class InputQuiz extends AppCompatActivity {
                         if(status.equals(Constant.ERR_200)){
                             Toast.makeText(mContext, message, Toast.LENGTH_SHORT).show();
                             //sessionManager.saveUser(Helper.ConvertResponseDataLoginToJson(response.body()));
-                            //startActivity(new Intent(InputQuiz.this, MainActivity.class));
+                            //startActivity(new Intent(InputQuiz.this, Materi.class));
                             //finish();
                             refresh();
 

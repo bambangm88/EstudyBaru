@@ -105,7 +105,7 @@ public class RegisterActivity extends AppCompatActivity {
                         if(status.equals(Constant.ERR_200)){
                             Toast.makeText(mContext, message, Toast.LENGTH_SHORT).show();
                             //sessionManager.saveUser(Helper.ConvertResponseDataLoginToJson(response.body()));
-                            //startActivity(new Intent(InputQuiz.this, MainActivity.class));
+                            //startActivity(new Intent(InputQuiz.this, Materi.class));
                             //finish();
                             refresh();
 

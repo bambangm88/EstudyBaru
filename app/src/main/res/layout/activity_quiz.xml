@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/bg"
     android:layout_height="match_parent">
 
 
@@ -53,7 +54,7 @@
                 android:id="@+id/rvQuiz"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="100dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
@@ -69,7 +70,7 @@
         android:textColor="@color/white"
         android:text="NILAI"
         android:id="@+id/btnNilai"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/btn"
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="60dp"/>
