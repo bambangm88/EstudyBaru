@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
     <androidx.cardview.widget.CardView
+
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/cvQuiz"
@@ -16,7 +17,7 @@
         android:id="@+id/LLBG"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
+        android:background="@drawable/paper"
         android:orientation="vertical">
 
 
@@ -95,10 +96,10 @@
         <LinearLayout
             android:visibility="gone"
             android:id="@+id/cvJawaban"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/kayu"
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="40dp">
 
             <TextView
                 android:id="@+id/jawaban"

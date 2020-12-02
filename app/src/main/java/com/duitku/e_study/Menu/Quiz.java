@@ -7,10 +7,13 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.DownloadManager;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -27,12 +30,16 @@ import com.developer.kalert.KAlertDialog;
 import com.duitku.e_study.Adapter.AdapterListQuiz;
 import com.duitku.e_study.Api.ApiService;
 import com.duitku.e_study.Api.Server;
+import com.duitku.e_study.Auth.ChangePassword;
 import com.duitku.e_study.Auth.RegisterActivity;
 import com.duitku.e_study.Constant.Constant;
 import com.duitku.e_study.MenuUtama;
 import com.duitku.e_study.Model.Data.DataListQuiz;
 import com.duitku.e_study.Model.Data.DataLogin;
 import com.duitku.e_study.Model.json.JsonListQuiz;
+import com.duitku.e_study.Model.json.JsonQuiz;
+import com.duitku.e_study.Model.json.JsonScore;
+import com.duitku.e_study.Model.response.ResponseData;
 import com.duitku.e_study.Model.response.ResponseListQuiz;
 import com.duitku.e_study.R;
 import com.duitku.e_study.Session.SessionManager;
@@ -154,7 +161,6 @@ public class Quiz extends AppCompatActivity {
 
                 if (checked != rvQuiz.getChildCount()){
 
-
                     new KAlertDialog(Quiz.this, KAlertDialog.WARNING_TYPE)
                             .setTitleText("Oops...")
                             .setContentText("Silahkan Jawab Semua Soal")
@@ -193,14 +199,22 @@ public class Quiz extends AppCompatActivity {
                         }
 
                     }
+                    int countSoal = rvQuiz.getChildCount() ;
+                    int score =  (  countBenar * 100 ) / countSoal;
+                    int countSalah = countSoal - countBenar ;
 
-                    int score =  countBenar * 100 ;
+                    SessionManager session = new SessionManager(Quiz.this);
+                    DataLogin user = Helper.DecodeFromJsonResponseLogin(session.getInstanceUser());
 
-                    new KAlertDialog(Quiz.this, KAlertDialog.SUCCESS_TYPE)
-                            .setTitleText("Selamat !")
-                            .setContentText("Score :" + score)
-                            .setConfirmText("OK") //Do not call this if you don't want to show confirm button
-                            .show();
+                    JsonScore json = new JsonScore();
+                    json.setId_materi(idmateri);
+                    json.setNis(user.getNis());
+                    json.setSoal_total(""+countSoal);
+                    json.setSoal_benar(""+countBenar);
+                    json.setSoal_salah(""+countSalah);
+                    json.setScore(""+score);
+                    addScore(json);
+
 
                     //Toast.makeText(Quiz.this, "Terjawab Benar " + countBenar, Toast.LENGTH_SHORT).show();
 
@@ -211,7 +225,11 @@ public class Quiz extends AppCompatActivity {
         });
 
 
-        
+        Toolbar toolbar = findViewById(R.id.toolbar_pay);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 
 
@@ -301,7 +319,140 @@ public class Quiz extends AppCompatActivity {
             return true;
         }
 
-        return super.onOptionsItemSelected(item);
+        if (id == R.id.downloadScore) {
+
+            downloadScore();
+
+            return true;
+        }
+
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                //Write your logic here
+
+                this.finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+
+    private void addScore(JsonScore jsonScore){
+        showProgress(true);
+        Call<ResponseData> call = API.requestAddScore(jsonScore);
+        call.enqueue(new Callback<ResponseData>() {
+            @Override
+            public void onResponse(Call<ResponseData> call, Response<ResponseData> response) {
+
+                if(response.isSuccessful()) {
+                    showProgress(false);
+                    if (response.body().getMetadata() != null) {
+
+                        String message = response.body().getMetadata().getMessage() ;
+                        String status = response.body().getMetadata().getCode() ;
+
+                        if(status.equals(Constant.ERR_200)){
+
+                            new KAlertDialog(Quiz.this, KAlertDialog.SUCCESS_TYPE)
+                                    .setTitleText("Selamat !")
+                                    .setContentText("Score : " + jsonScore.getScore())
+                                    .setConfirmText("OK") //Do not call this if you don't want to show confirm button
+                                    .show();
+
+
+                            //Toast.makeText(mContext, message, Toast.LENGTH_SHORT).show();
+                        }else{
+                            Toast.makeText(mContext, message, Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
+                }
+
+                else{
+                    showProgress(false);
+                    //Log.e("TAG", "onResponse: "+response.body().toString() );
+                    Toast.makeText(mContext, "Server Error", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseData> call, Throwable t) {
+                showProgress(false);
+                Toast.makeText(mContext, t.getMessage(), Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+
+
+    }
+
+
+
+
+    private void downloadScore(){
+        showProgress(true);
+        Call<ResponseData> call = API.requestDownloadScore();
+        call.enqueue(new Callback<ResponseData>() {
+            @Override
+            public void onResponse(Call<ResponseData> call, Response<ResponseData> response) {
+
+                if(response.isSuccessful()) {
+                    showProgress(false);
+                    if (response.body().getMetadata() != null) {
+
+                        String message = response.body().getMetadata().getMessage() ;
+                        String status = response.body().getMetadata().getCode() ;
+
+
+                        if(status.equals(Constant.ERR_200)){
+                            String url= response.body().getMetadata().getDownloadUrl();
+
+                            downloadManager(url);
+
+                            //Toast.makeText(mContext, message, Toast.LENGTH_SHORT).show();
+                        }else{
+                            Toast.makeText(mContext, message, Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
+                }
+
+                else{
+                    showProgress(false);
+                    //Log.e("TAG", "onResponse: "+response.body().toString() );
+                    Toast.makeText(mContext, "Server Error", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseData> call, Throwable t) {
+                showProgress(false);
+                Toast.makeText(mContext, t.getMessage(), Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+
+
+    }
+
+
+    private void downloadManager(String url){
+
+        Log.e("TAG", "downloadManager: "+Constant.BASE_URL_DOWNLOAD+url );
+
+        DownloadManager downloadmanager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
+        Uri uri = Uri.parse(Constant.BASE_URL_DOWNLOAD+url);
+
+        DownloadManager.Request request = new DownloadManager.Request(uri);
+        request.setTitle("My File");
+        request.setDescription("Downloading");//request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,url);
+        //request.setDestinationUri(Uri.parse("file://" + "MTN" + "/"+url));
+        downloadmanager.enqueue(request);
     }
 
 

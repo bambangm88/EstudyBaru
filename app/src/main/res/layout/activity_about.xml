@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/paper"
     tools:context=".Menu.About">
 
 
@@ -23,7 +24,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="?android:attr/actionBarSize"
                 android:layout_gravity="center"
-                android:background="@color/colorPrimary"
+                android:background="@drawable/kayu"
                 android:theme="@style/mytoolbar"
                 app:elevation="4dp"
                 app:popupTheme="@style/Base.Theme.AppCompat.Light.DarkActionBar">
@@ -51,18 +52,61 @@
             android:layout_height="200dp"/>
 
         <TextView
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
-            android:text="Nama : ..."
+            android:layout_marginRight="20dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/architects_daughter"
+            android:text="DAULAT KRISMAN SITOHANG"
+            android:textAlignment="center"
+            android:textStyle="bold" />
 
         <TextView
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
-            android:text="DLL : ..."
+            android:layout_marginRight="20dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/architects_daughter"
+            android:text="MEDIA PEMBELAJARAN ANDROID
+MUSIK TRADISIONAL NUSANTARA"
+            android:textAlignment="center"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/architects_daughter"
+            android:text="Aplikasi pengenalan musik tradisional indonesia berbasis android ini merupakan sebuah aplikasi yang memperkenalkan alat-alat musik tradisional dari berbagai daerah di Indonesia yang bertujuan untuk memperkenalakan dan melestarikan kekayaan budaya seni musik Indonesia."
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:src="@drawable/mtnlogo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/architects_daughter"
+            android:text="TEKNOLOGI PENDIDIKAN PROGRAM PASCASARJANA
+UNIMED"
+            android:textAlignment="center"
+            android:textStyle="bold" />
+
 
 
 

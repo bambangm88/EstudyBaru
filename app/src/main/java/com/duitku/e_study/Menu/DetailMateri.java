@@ -1,9 +1,11 @@
 package com.duitku.e_study.Menu;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -60,6 +62,27 @@ public class DetailMateri extends AppCompatActivity {
             }
         });
 
+        Toolbar toolbar = findViewById(R.id.toolbar_pay);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+    }
+
+
+    //homeback
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                //Write your logic here
+
+                this.finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
 
     }
 }

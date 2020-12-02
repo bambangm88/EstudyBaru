@@ -85,7 +85,8 @@ public class ChooseQuiz extends AppCompatActivity {
         listMateri();
 
 
-
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
 
@@ -168,6 +169,9 @@ public class ChooseQuiz extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
+
+
+
         if (id == R.id.addsiswa) {
             startActivity(new Intent(ChooseQuiz.this, RegisterActivity.class));
             return true;
@@ -177,7 +181,19 @@ public class ChooseQuiz extends AppCompatActivity {
             show_dialog(ChooseQuiz.this);
             return true;
         }
-        return super.onOptionsItemSelected(item);
+
+
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                //Write your logic here
+
+                this.finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
+
     }
 
 

@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,6 +21,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.FileProvider;
 
 import com.bumptech.glide.Glide;
@@ -135,6 +137,27 @@ public class EditMateri extends AppCompatActivity {
 
 
 
+        Toolbar toolbar = findViewById(R.id.toolbar_pay);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+    }
+
+
+    //homeback
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                //Write your logic here
+
+                this.finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
 
     }
 

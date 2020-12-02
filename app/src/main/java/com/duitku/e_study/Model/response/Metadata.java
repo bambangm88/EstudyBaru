@@ -10,6 +10,20 @@ public class Metadata {
     @SerializedName("message")
     private String message;
 
+    @SerializedName("urlDownload")
+    private String urlDownload;
+
+
+    public String getDownloadUrl() {
+        return urlDownload;
+    }
+
+    public void setDownloadUrl(String downloadUrl) {
+        this.urlDownload = downloadUrl;
+    }
+
+
+
     public String getCode() {
         return code;
     }

@@ -10,6 +10,7 @@ import com.duitku.e_study.Model.json.JsonLogin;
 import com.duitku.e_study.Model.json.JsonMateri;
 import com.duitku.e_study.Model.json.JsonPeriod;
 import com.duitku.e_study.Model.json.JsonQuiz;
+import com.duitku.e_study.Model.json.JsonScore;
 import com.duitku.e_study.Model.response.ResponseData;
 import com.duitku.e_study.Model.response.ResponseListMateri;
 import com.duitku.e_study.Model.response.ResponseListQuiz;
@@ -31,6 +32,13 @@ public interface ApiService {
     @Headers("Content-Type: application/json")
     @POST("siswa/addQuiz")
     Call<ResponseData> requestAddQuiz(@Body JsonQuiz body);
+
+    @Headers("Content-Type: application/json")
+    @POST("siswa/addScore")
+    Call<ResponseData> requestAddScore(@Body JsonScore body);
+
+    @GET("siswa/downloadScore")
+    Call<ResponseData> requestDownloadScore();
 
     @Headers("Content-Type: application/json")
     @POST("siswa/addMateri")

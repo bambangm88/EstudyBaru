@@ -8,5 +8,10 @@
         app:showAsAction="never"
         />
 
+        <item
+            android:id="@+id/downloadScore"
+            android:title="Download Score"
+            app:showAsAction="never"
+            />
 
 </menu>

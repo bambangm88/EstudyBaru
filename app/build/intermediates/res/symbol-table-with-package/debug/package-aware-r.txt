@@ -43,7 +43,11 @@ animator mtrl_fab_hide_motion_spec
 animator mtrl_fab_show_motion_spec
 animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
+array com_google_android_gms_fonts_certs
+array com_google_android_gms_fonts_certs_dev
+array com_google_android_gms_fonts_certs_prod
 array jawaban_isi
+array preloaded_fonts
 attr actionBarDivider
 attr actionBarItemBackground
 attr actionBarPopupTheme
@@ -1158,6 +1162,8 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_success_tick
+drawable kayu
+drawable mtnlogo
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
 drawable musik
@@ -1174,6 +1180,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable paper
 drawable red_button_background
 drawable roundedittextbackground
 drawable success_bow
@@ -1182,6 +1189,7 @@ drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable warning_circle
 drawable warning_sigh
+font architects_daughter
 id ALT
 id CTRL
 id FUNCTION
@@ -1300,6 +1308,7 @@ id dialog_button
 id dimensions
 id direct
 id disableHome
+id downloadScore
 id edit_query
 id edit_text
 id end

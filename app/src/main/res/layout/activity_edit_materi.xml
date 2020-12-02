@@ -29,7 +29,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="?android:attr/actionBarSize"
                 android:layout_gravity="center"
-                android:background="@color/colorPrimary"
+                android:background="@drawable/kayu"
                 android:theme="@style/mytoolbar"
                 app:elevation="4dp"
                 app:popupTheme="@style/Base.Theme.AppCompat.Light.DarkActionBar">

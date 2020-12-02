@@ -96,8 +96,13 @@ public class Materi extends AppCompatActivity {
 
 
 
+        Toolbar toolbar = findViewById(R.id.toolbar_pay);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
+
 
 
 
@@ -179,7 +184,19 @@ public class Materi extends AppCompatActivity {
             return true;
         }
 
-        return super.onOptionsItemSelected(item);
+
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                //Write your logic here
+
+                this.finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
+
+
     }
 
     @Override

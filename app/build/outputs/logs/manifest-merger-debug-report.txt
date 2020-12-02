@@ -1,20 +1,20 @@
 -- Merging decision tree log ---
 provider#androidx.core.content.FileProvider
-INJECTED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:36:9-44:20
+INJECTED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:37:9-45:20
 	android:grantUriPermissions
-		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:40:13-47
+		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:41:13-47
 	android:authorities
 		INJECTED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml
-		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:38:13-60
+		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:39:13-60
 	android:exported
-		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:39:13-37
+		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:40:13-37
 	android:name
-		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:37:13-62
+		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:38:13-62
 manifest
-ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:2:1-55:12
-INJECTED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:2:1-55:12
-INJECTED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:2:1-55:12
-INJECTED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:2:1-55:12
+ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:2:1-59:12
+INJECTED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:2:1-59:12
+INJECTED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:2:1-59:12
+INJECTED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:2:1-59:12
 MERGED from [com.karumi:dexter:5.0.0] /Users/bambangmaulana/.gradle/caches/transforms-2/files-2.1/f64a026033b34f47225df158f7e0a020/jetified-dexter-5.0.0/AndroidManifest.xml:17:1-32:12
 MERGED from [com.github.TutorialsAndroid:KAlertDialog:v14.0.19] /Users/bambangmaulana/.gradle/caches/transforms-2/files-2.1/0ff5822f984755f88b57b4e3c8e905b1/KAlertDialog-v14.0.19/AndroidManifest.xml:2:1-13:12
 MERGED from [com.huangyz0918:androidwm:0.2.3] /Users/bambangmaulana/.gradle/caches/transforms-2/files-2.1/28fc2d9d740c853b2f14eb34991a7735/jetified-androidwm-0.2.3/AndroidManifest.xml:2:1-11:12
@@ -63,20 +63,20 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/bambangmaulana
 MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/bambangmaulana/.gradle/caches/transforms-2/files-2.1/3819fb4fef2e012192b32762458ba145/savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [com.github.TutorialsAndroid:progressx:v6.0.19] /Users/bambangmaulana/.gradle/caches/transforms-2/files-2.1/35bfd19a3f62b37b0e152d0f63018159/progressx-v6.0.19/AndroidManifest.xml:2:1-13:12
 MERGED from [com.jakewharton.timber:timber:4.7.1] /Users/bambangmaulana/.gradle/caches/transforms-2/files-2.1/6230ad6cb33f8c514188c177162916d3/jetified-timber-4.7.1/AndroidManifest.xml:2:1-9:12
-INJECTED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:2:1-55:12
-INJECTED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:2:1-55:12
-INJECTED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:2:1-55:12
+INJECTED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:2:1-59:12
+INJECTED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:2:1-59:12
+INJECTED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:2:1-59:12
 	package
 		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:3:5-33
 		INJECTED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml
-		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:2:1-55:12
+		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:2:1-59:12
 		INJECTED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml
-		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:2:1-55:12
+		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:2:1-59:12
 		INJECTED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:2:11-69
@@ -105,7 +105,7 @@ ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/ma
 	android:name
 		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:10:22-66
 application
-ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:14:5-53:19
+ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:14:5-57:19
 MERGED from [com.karumi:dexter:5.0.0] /Users/bambangmaulana/.gradle/caches/transforms-2/files-2.1/f64a026033b34f47225df158f7e0a020/jetified-dexter-5.0.0/AndroidManifest.xml:26:5-30:19
 MERGED from [com.karumi:dexter:5.0.0] /Users/bambangmaulana/.gradle/caches/transforms-2/files-2.1/f64a026033b34f47225df158f7e0a020/jetified-dexter-5.0.0/AndroidManifest.xml:26:5-30:19
 MERGED from [com.github.TutorialsAndroid:KAlertDialog:v14.0.19] /Users/bambangmaulana/.gradle/caches/transforms-2/files-2.1/0ff5822f984755f88b57b4e3c8e905b1/KAlertDialog-v14.0.19/AndroidManifest.xml:11:5-20
@@ -132,84 +132,92 @@ MERGED from [com.github.TutorialsAndroid:progressx:v6.0.19] /Users/bambangmaulan
 MERGED from [com.github.TutorialsAndroid:progressx:v6.0.19] /Users/bambangmaulana/.gradle/caches/transforms-2/files-2.1/35bfd19a3f62b37b0e152d0f63018159/progressx-v6.0.19/AndroidManifest.xml:11:5-20
 MERGED from [com.jakewharton.timber:timber:4.7.1] /Users/bambangmaulana/.gradle/caches/transforms-2/files-2.1/6230ad6cb33f8c514188c177162916d3/jetified-timber-4.7.1/AndroidManifest.xml:7:5-20
 MERGED from [com.jakewharton.timber:timber:4.7.1] /Users/bambangmaulana/.gradle/caches/transforms-2/files-2.1/6230ad6cb33f8c514188c177162916d3/jetified-timber-4.7.1/AndroidManifest.xml:7:5-20
+	android:requestLegacyExternalStorage
+		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:15:9-52
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.1.0] /Users/bambangmaulana/.gradle/caches/transforms-2/files-2.1/e9dab9c67c1ee3668e0bbf86c6d8cbd8/core-1.1.0/AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:19:9-35
+		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:20:9-35
 	android:label
-		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:17:9-41
-	android:roundIcon
 		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:18:9-41
+	android:roundIcon
+		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:19:9-41
 	android:icon
-		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:16:9-36
+		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:17:9-36
 	android:allowBackup
-		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:15:9-35
+		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:16:9-35
 	android:theme
-		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:20:9-40
+		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:21:9-40
 	android:usesCleartextTraffic
-		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:21:9-44
+		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:22:9-44
 activity#com.duitku.e_study.Menu.About
-ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:22:9-57
+ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:23:9-57
 	android:name
-		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:22:19-45
+		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:23:19-45
 activity#com.duitku.e_study.MenuUtama
-ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:23:9-47
-	android:name
-		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:23:19-44
-activity#com.duitku.e_study.Menu.Quiz
 ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:24:9-47
 	android:name
 		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:24:19-44
+activity#com.duitku.e_study.Menu.Quiz
+ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:25:9-47
+	android:name
+		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:25:19-44
 activity#com.duitku.e_study.Menu.DetailMateri
-ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:25:9-55
+ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:26:9-55
 	android:name
-		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:25:19-52
+		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:26:19-52
 activity#com.duitku.e_study.Menu.Materi
-ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:26:9-49
+ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:27:9-49
 	android:name
-		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:26:19-46
+		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:27:19-46
 activity#com.duitku.e_study.Menu.InputQuiz
-ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:27:9-52
+ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:28:9-52
 	android:name
-		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:27:19-49
+		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:28:19-49
 activity#com.duitku.e_study.Auth.RegisterActivity
-ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:28:9-59
+ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:29:9-59
 	android:name
-		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:28:19-56
+		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:29:19-56
 activity#com.duitku.e_study.Menu.EditQuiz
-ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:29:9-51
+ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:30:9-51
 	android:name
-		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:29:19-48
+		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:30:19-48
 activity#com.duitku.e_study.Auth.ChangePassword
-ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:30:9-57
+ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:31:9-57
 	android:name
-		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:30:19-54
+		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:31:19-54
 activity#com.duitku.e_study.Menu.ChooseQuiz
-ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:31:9-53
+ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:32:9-53
 	android:name
-		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:31:19-50
+		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:32:19-50
 activity#com.duitku.e_study.Menu.InputMateri
-ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:32:9-54
+ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:33:9-54
 	android:name
-		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:32:19-51
+		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:33:19-51
 activity#com.duitku.e_study.Menu.EditMateri
-ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:33:9-53
+ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:34:9-53
 	android:name
-		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:33:19-50
+		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:34:19-50
 activity#com.duitku.e_study.Auth.LoginActivity
-ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:46:9-52:20
+ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:47:9-53:20
 	android:name
-		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:46:19-53
+		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:47:19-53
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:47:13-51:29
+ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:48:13-52:29
 action#android.intent.action.MAIN
-ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:48:17-69
+ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:49:17-69
 	android:name
-		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:48:25-66
+		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:49:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:50:17-77
+ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:51:17-77
 	android:name
-		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:50:27-74
+		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:51:27-74
+meta-data#preloaded_fonts
+ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:54:9-56:57
+	android:resource
+		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:56:13-54
+	android:name
+		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:55:13-43
 uses-sdk
 INJECTED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml
@@ -321,11 +329,11 @@ INJECTED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src
 		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:41:13-43:57
+ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:42:13-44:57
 	android:resource
-		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:43:17-55
+		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:44:17-55
 	android:name
-		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:42:17-67
+		ADDED from /Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:43:17-67
 activity#com.karumi.dexter.DexterActivity
 ADDED from [com.karumi:dexter:5.0.0] /Users/bambangmaulana/.gradle/caches/transforms-2/files-2.1/f64a026033b34f47225df158f7e0a020/jetified-dexter-5.0.0/AndroidManifest.xml:27:9-29:72
 	android:theme
