@@ -31,6 +31,9 @@ import com.duitku.e_study.Constant.Constant;
 import com.duitku.e_study.Model.Data.DataListMateri;
 import com.duitku.e_study.Model.response.ResponseListMateri;
 import com.duitku.e_study.R;
+import com.duitku.e_study.Service.SoundService;
+import com.duitku.e_study.Service.SoundServiceDua;
+import com.duitku.e_study.Service.SoundServiceTiga;
 import com.duitku.e_study.Session.SessionManager;
 
 import java.util.ArrayList;
@@ -87,6 +90,8 @@ public class ChooseQuiz extends AppCompatActivity {
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        PlayBackgroundSound();
 
     }
 
@@ -227,4 +232,19 @@ public class ChooseQuiz extends AppCompatActivity {
         alert11.show();
     }
 
+
+    public void PlayBackgroundSound() {
+
+        Intent myService = new Intent(ChooseQuiz.this, SoundService.class);
+        //startService(myService);
+        stopService(myService);
+
+        myService = new Intent(ChooseQuiz.this, SoundServiceDua.class);
+        //startService(myService);
+        stopService(myService);
+
+        Intent intent = new Intent(ChooseQuiz.this, SoundServiceTiga.class);
+        startService(intent);
+
+    }
 }

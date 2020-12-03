@@ -42,6 +42,8 @@ import com.duitku.e_study.Model.json.JsonScore;
 import com.duitku.e_study.Model.response.ResponseData;
 import com.duitku.e_study.Model.response.ResponseListQuiz;
 import com.duitku.e_study.R;
+import com.duitku.e_study.Service.SoundService;
+import com.duitku.e_study.Service.SoundServiceTiga;
 import com.duitku.e_study.Session.SessionManager;
 import com.duitku.e_study.Util.Helper;
 
@@ -74,7 +76,7 @@ public class Quiz extends AppCompatActivity {
     private SessionManager sessionManager ;
 
     private ArrayList<String> arrayJawaban = new ArrayList<>();
-    
+    private String idmateri ;
     
 
     @Override
@@ -94,8 +96,9 @@ public class Quiz extends AppCompatActivity {
         }
 
         Bundle bundle=getIntent().getExtras();
-        String idmateri = bundle.getString("idMateri");
+         idmateri = bundle.getString("idMateri");
 
+        PlayBackgroundSound();
 
         API = Server.getAPIService();
 
@@ -241,7 +244,7 @@ public class Quiz extends AppCompatActivity {
 
 
     private void listQuiz(JsonListQuiz json){
-
+        btnNilai.setVisibility(View.GONE);
         showProgress(true);
         Call<ResponseListQuiz> call = API.requestListQuiz(json);
         call.enqueue(new Callback<ResponseListQuiz>() {
@@ -255,22 +258,24 @@ public class Quiz extends AppCompatActivity {
                         String status = response.body().getMetadata().getCode() ;
 
                         if(status.equals(Constant.ERR_200)) {
-
+                            btnNilai.setVisibility(View.VISIBLE);
                             AllQuizList.addAll(response.body().getResponse().getData());
                             rvQuiz.setAdapter(new AdapterListQuiz(mContext, AllQuizList));
                             Adapter.notifyDataSetChanged();
 
                         }else{
+                            btnNilai.setVisibility(View.GONE);
                             Toast.makeText(mContext, message, Toast.LENGTH_SHORT).show();
                         }
 
 
                     }else{
-
+                        btnNilai.setVisibility(View.GONE);
                         Toast.makeText(mContext, "Error Response Data", Toast.LENGTH_LONG).show();
                     }
 
                 }else{
+                    btnNilai.setVisibility(View.GONE);
                     showProgress(false);
                     Toast.makeText(mContext, "Error Response Data", Toast.LENGTH_LONG).show();
                 }
@@ -357,7 +362,19 @@ public class Quiz extends AppCompatActivity {
                             new KAlertDialog(Quiz.this, KAlertDialog.SUCCESS_TYPE)
                                     .setTitleText("Selamat !")
                                     .setContentText("Score : " + jsonScore.getScore())
+                                    .setCancelText("Kembali Ujian")
                                     .setConfirmText("OK") //Do not call this if you don't want to show confirm button
+                                    .showCancelButton(true)
+                                    .setCancelClickListener(new KAlertDialog.KAlertClickListener() {
+                                        @Override
+                                        public void onClick(KAlertDialog sDialog) {
+                                            sDialog.cancel();
+                                            Intent i = new Intent(mContext , Quiz.class);
+                                            i.putExtra("idMateri", idmateri);
+                                            mContext.startActivity(i);
+                                            finish();
+                                        }
+                                    })
                                     .show();
 
 
@@ -455,6 +472,10 @@ public class Quiz extends AppCompatActivity {
         downloadmanager.enqueue(request);
     }
 
+    public void PlayBackgroundSound() {
+        Intent intent = new Intent(Quiz.this, SoundServiceTiga.class);
+        startService(intent);
+    }
 
 
 }

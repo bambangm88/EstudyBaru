@@ -473,6 +473,10 @@ attr ratingBarStyleSmall
 attr reverseLayout
 attr rippleColor
 attr rollType
+attr sb_handlerColor
+attr sb_horizontal
+attr sb_indicatorColor
+attr sb_indicatorTextColor
 attr scrimAnimationDuration
 attr scrimBackground
 attr scrimVisibleHeightTrigger
@@ -1141,6 +1145,10 @@ drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
 drawable button_android
 drawable button_background
+drawable default_scroll_handle_bottom
+drawable default_scroll_handle_left
+drawable default_scroll_handle_right
+drawable default_scroll_handle_top
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
@@ -1337,6 +1345,7 @@ id icon
 id icon_group
 id ifRoom
 id image
+id imageView2
 id imgMateri
 id imgQuiz
 id info
@@ -1393,6 +1402,7 @@ id parallax
 id parent
 id parentPanel
 id parent_matrix
+id pdfView
 id percent
 id pin
 id profileimage
@@ -1571,6 +1581,7 @@ layout activity_input_quiz
 layout activity_login
 layout activity_main
 layout activity_menu_utama
+layout activity_p_d_f_viewer
 layout activity_quiz
 layout activity_register
 layout alert_dialog
@@ -1611,6 +1622,7 @@ layout notification_template_part_time
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout splash
 layout support_simple_spinner_dropdown_item
 menu menu_main
 menu menu_materi
@@ -1618,6 +1630,9 @@ menu menu_quiz
 mipmap ic_launcher
 mipmap ic_launcher_round
 mipmap logo
+raw backdua
+raw backsatu
+raw backtiga
 string LOADING
 string abc_action_bar_home_description
 string abc_action_bar_up_description
@@ -2240,6 +2255,7 @@ styleable RecycleListView paddingBottomNoButtons paddingTopNoTitle
 styleable RecyclerView android_orientation android_descendantFocusability fastScrollEnabled fastScrollHorizontalThumbDrawable fastScrollHorizontalTrackDrawable fastScrollVerticalThumbDrawable fastScrollVerticalTrackDrawable layoutManager reverseLayout spanCount stackFromEnd
 styleable Rotate3dAnimation fromDeg pivotX pivotY rollType toDeg
 styleable ScrimInsetsFrameLayout insetForeground
+styleable ScrollBar sb_handlerColor sb_horizontal sb_indicatorColor sb_indicatorTextColor
 styleable ScrollingViewBehavior_Layout behavior_overlapTop
 styleable SearchView android_focusable android_maxWidth android_inputType android_imeOptions closeIcon commitIcon defaultQueryHint goIcon iconifiedByDefault layout queryBackground queryHint searchHintIcon searchIcon submitBackground suggestionRowLayout voiceIcon
 styleable Snackbar snackbarButtonStyle snackbarStyle

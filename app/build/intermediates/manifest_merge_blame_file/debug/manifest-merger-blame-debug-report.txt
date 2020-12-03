@@ -30,108 +30,169 @@
 16-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:10:22-66
 17
 18    <application
-18-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:14:5-57:19
+18-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:12:5-96:19
 19        android:allowBackup="true"
-19-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:16:9-35
+19-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:13:9-35
 20        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 20-->[androidx.core:core:1.1.0] /Users/bambangmaulana/.gradle/caches/transforms-2/files-2.1/e9dab9c67c1ee3668e0bbf86c6d8cbd8/core-1.1.0/AndroidManifest.xml:24:18-86
 21        android:debuggable="true"
 22        android:icon="@mipmap/logo"
-22-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:17:9-36
+22-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:14:9-36
 23        android:label="@string/app_name"
-23-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:18:9-41
+23-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:15:9-41
 24        android:requestLegacyExternalStorage="true"
-24-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:15:9-52
+24-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:16:9-52
 25        android:roundIcon="@mipmap/logo"
-25-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:19:9-41
+25-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:17:9-41
 26        android:supportsRtl="true"
-26-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:20:9-35
+26-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:18:9-35
 27        android:theme="@style/AppTheme"
-27-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:21:9-40
+27-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:19:9-40
 28        android:usesCleartextTraffic="true" >
-28-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:22:9-44
-29        <activity android:name="com.duitku.e_study.Menu.About" />
-29-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:23:9-57
-29-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:23:19-45
-30        <activity android:name="com.duitku.e_study.MenuUtama" />
-30-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:24:9-47
-30-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:24:19-44
-31        <activity android:name="com.duitku.e_study.Menu.Quiz" />
-31-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:25:9-47
-31-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:25:19-44
-32        <activity android:name="com.duitku.e_study.Menu.DetailMateri" />
-32-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:26:9-55
-32-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:26:19-52
-33        <activity android:name="com.duitku.e_study.Menu.Materi" />
-33-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:27:9-49
-33-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:27:19-46
-34        <activity android:name="com.duitku.e_study.Menu.InputQuiz" />
-34-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:28:9-52
-34-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:28:19-49
-35        <activity android:name="com.duitku.e_study.Auth.RegisterActivity" />
-35-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:29:9-59
-35-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:29:19-56
-36        <activity android:name="com.duitku.e_study.Menu.EditQuiz" />
-36-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:30:9-51
-36-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:30:19-48
-37        <activity android:name="com.duitku.e_study.Auth.ChangePassword" />
-37-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:31:9-57
-37-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:31:19-54
-38        <activity android:name="com.duitku.e_study.Menu.ChooseQuiz" />
-38-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:32:9-53
-38-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:32:19-50
-39        <activity android:name="com.duitku.e_study.Menu.InputMateri" />
-39-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:33:9-54
-39-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:33:19-51
-40        <activity android:name="com.duitku.e_study.Menu.EditMateri" />
-40-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:34:9-53
-40-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:34:19-50
-41
-42        <provider
-43            android:name="androidx.core.content.FileProvider"
-43-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:38:13-62
-44            android:authorities="com.duitku.e_study.provider"
-44-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:39:13-60
-45            android:exported="false"
-45-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:40:13-37
-46            android:grantUriPermissions="true" >
-46-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:41:13-47
-47            <meta-data
-47-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:42:13-44:57
-48                android:name="android.support.FILE_PROVIDER_PATHS"
-48-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:43:17-67
-49                android:resource="@xml/provider_paths" />
-49-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:44:17-55
-50        </provider>
-51
-52        <activity android:name="com.duitku.e_study.Auth.LoginActivity" >
-52-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:47:9-53:20
-52-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:47:19-53
-53            <intent-filter>
-53-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:48:13-52:29
-54                <action android:name="android.intent.action.MAIN" />
-54-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:49:17-69
-54-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:49:25-66
-55
-56                <category android:name="android.intent.category.LAUNCHER" />
-56-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:51:17-77
-56-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:51:27-74
-57            </intent-filter>
-58        </activity>
-59
-60        <meta-data
-60-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:54:9-56:57
-61            android:name="preloaded_fonts"
-61-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:55:13-43
-62            android:resource="@array/preloaded_fonts" />
-62-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:56:13-54
-63
-64        <activity
-64-->[com.karumi:dexter:5.0.0] /Users/bambangmaulana/.gradle/caches/transforms-2/files-2.1/f64a026033b34f47225df158f7e0a020/jetified-dexter-5.0.0/AndroidManifest.xml:27:9-29:72
-65            android:name="com.karumi.dexter.DexterActivity"
-65-->[com.karumi:dexter:5.0.0] /Users/bambangmaulana/.gradle/caches/transforms-2/files-2.1/f64a026033b34f47225df158f7e0a020/jetified-dexter-5.0.0/AndroidManifest.xml:28:13-60
-66            android:theme="@style/Dexter.Internal.Theme.Transparent" />
-66-->[com.karumi:dexter:5.0.0] /Users/bambangmaulana/.gradle/caches/transforms-2/files-2.1/f64a026033b34f47225df158f7e0a020/jetified-dexter-5.0.0/AndroidManifest.xml:29:13-69
-67    </application>
-68
-69</manifest>
+28-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:20:9-44
+29        <service
+29-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:21:9-23:40
+30            android:name="com.duitku.e_study.Service.SoundService"
+30-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:22:13-49
+31            android:exported="false" />
+31-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:23:13-37
+32        <service
+32-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:25:9-27:40
+33            android:name="com.duitku.e_study.Service.SoundServiceDua"
+33-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:26:13-52
+34            android:exported="false" />
+34-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:27:13-37
+35        <service
+35-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:29:9-31:40
+36            android:name="com.duitku.e_study.Service.SoundServiceTiga"
+36-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:30:13-53
+37            android:exported="false" />
+37-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:31:13-37
+38
+39        <activity
+39-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:35:9-37:52
+40            android:name="com.duitku.e_study.Auth.LoginActivity"
+40-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:36:13-47
+41            android:screenOrientation="portrait" />
+41-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:37:13-49
+42        <activity
+42-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:38:9-40:52
+43            android:name="com.duitku.e_study.Menu.About"
+43-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:39:13-39
+44            android:screenOrientation="portrait" />
+44-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:40:13-49
+45        <activity
+45-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:41:9-43:52
+46            android:name="com.duitku.e_study.MenuUtama"
+46-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:42:13-38
+47            android:screenOrientation="portrait" />
+47-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:43:13-49
+48        <activity
+48-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:44:9-46:52
+49            android:name="com.duitku.e_study.Menu.Quiz"
+49-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:45:13-38
+50            android:screenOrientation="portrait" />
+50-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:46:13-49
+51        <activity
+51-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:47:9-49:52
+52            android:name="com.duitku.e_study.Menu.DetailMateri"
+52-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:48:13-46
+53            android:screenOrientation="portrait" />
+53-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:49:13-49
+54        <activity
+54-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:50:9-52:52
+55            android:name="com.duitku.e_study.Menu.Materi"
+55-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:51:13-40
+56            android:screenOrientation="portrait" />
+56-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:52:13-49
+57        <activity
+57-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:53:9-55:52
+58            android:name="com.duitku.e_study.Menu.InputQuiz"
+58-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:54:13-43
+59            android:screenOrientation="portrait" />
+59-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:55:13-49
+60        <activity
+60-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:56:9-58:52
+61            android:name="com.duitku.e_study.Auth.RegisterActivity"
+61-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:57:13-50
+62            android:screenOrientation="portrait" />
+62-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:58:13-49
+63        <activity
+63-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:59:9-61:52
+64            android:name="com.duitku.e_study.Menu.EditQuiz"
+64-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:60:13-42
+65            android:screenOrientation="portrait" />
+65-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:61:13-49
+66        <activity
+66-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:62:9-64:52
+67            android:name="com.duitku.e_study.Auth.ChangePassword"
+67-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:63:13-48
+68            android:screenOrientation="portrait" />
+68-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:64:13-49
+69        <activity
+69-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:65:9-67:52
+70            android:name="com.duitku.e_study.Menu.ChooseQuiz"
+70-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:66:13-44
+71            android:screenOrientation="portrait" />
+71-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:67:13-49
+72        <activity
+72-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:68:9-70:52
+73            android:name="com.duitku.e_study.Menu.InputMateri"
+73-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:69:13-45
+74            android:screenOrientation="portrait" />
+74-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:70:13-49
+75        <activity
+75-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:71:9-73:52
+76            android:name="com.duitku.e_study.Menu.EditMateri"
+76-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:72:13-44
+77            android:screenOrientation="portrait" />
+77-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:73:13-49
+78
+79        <provider
+80            android:name="androidx.core.content.FileProvider"
+80-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:76:13-62
+81            android:authorities="com.duitku.e_study.provider"
+81-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:77:13-60
+82            android:exported="false"
+82-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:78:13-37
+83            android:grantUriPermissions="true" >
+83-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:79:13-47
+84            <meta-data
+84-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:80:13-82:58
+85                android:name="android.support.FILE_PROVIDER_PATHS"
+85-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:81:17-67
+86                android:resource="@xml/provider_paths" />
+86-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:82:17-55
+87        </provider>
+88
+89        <activity android:name="com.duitku.e_study.Menu.SplashScreen" >
+89-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:85:9-91:20
+89-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:85:19-52
+90            <intent-filter>
+90-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:86:13-90:29
+91                <action android:name="android.intent.action.MAIN" />
+91-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:87:17-69
+91-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:87:25-66
+92
+93                <category android:name="android.intent.category.LAUNCHER" />
+93-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:89:17-77
+93-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:89:27-74
+94            </intent-filter>
+95        </activity>
+96
+97        <meta-data
+97-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:93:9-95:57
+98            android:name="preloaded_fonts"
+98-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:94:13-43
+99            android:resource="@array/preloaded_fonts" />
+99-->/Users/bambangmaulana/Documents/Android Project/EstudyBaru/app/src/main/AndroidManifest.xml:95:13-54
+100
+101        <activity
+101-->[com.karumi:dexter:5.0.0] /Users/bambangmaulana/.gradle/caches/transforms-2/files-2.1/f64a026033b34f47225df158f7e0a020/jetified-dexter-5.0.0/AndroidManifest.xml:27:9-29:72
+102            android:name="com.karumi.dexter.DexterActivity"
+102-->[com.karumi:dexter:5.0.0] /Users/bambangmaulana/.gradle/caches/transforms-2/files-2.1/f64a026033b34f47225df158f7e0a020/jetified-dexter-5.0.0/AndroidManifest.xml:28:13-60
+103            android:theme="@style/Dexter.Internal.Theme.Transparent" />
+103-->[com.karumi:dexter:5.0.0] /Users/bambangmaulana/.gradle/caches/transforms-2/files-2.1/f64a026033b34f47225df158f7e0a020/jetified-dexter-5.0.0/AndroidManifest.xml:29:13-69
+104    </application>
+105
+106</manifest>

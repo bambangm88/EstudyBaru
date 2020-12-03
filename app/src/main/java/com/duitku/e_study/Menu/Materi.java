@@ -34,6 +34,9 @@ import com.duitku.e_study.Model.Data.DataListMateri;
 import com.duitku.e_study.Model.Data.DataLogin;
 import com.duitku.e_study.Model.response.ResponseListMateri;
 import com.duitku.e_study.R;
+import com.duitku.e_study.Service.SoundService;
+import com.duitku.e_study.Service.SoundServiceDua;
+import com.duitku.e_study.Service.SoundServiceTiga;
 import com.duitku.e_study.Session.SessionManager;
 import com.duitku.e_study.Util.Helper;
 
@@ -94,6 +97,7 @@ public class Materi extends AppCompatActivity {
         AllMateriList.clear();
         listMateri();
 
+        PlayBackgroundSound();
 
 
         Toolbar toolbar = findViewById(R.id.toolbar_pay);
@@ -204,4 +208,21 @@ public class Materi extends AppCompatActivity {
         super.onResume();
 
     }
+
+
+    public void PlayBackgroundSound() {
+
+        Intent myService = new Intent(Materi.this, SoundService.class);
+        //startService(myService);
+        stopService(myService);
+
+        myService = new Intent(Materi.this, SoundServiceTiga.class);
+        //startService(myService);
+        stopService(myService);
+
+        Intent intent = new Intent(Materi.this, SoundServiceDua.class);
+        startService(intent);
+    }
+
+
 }

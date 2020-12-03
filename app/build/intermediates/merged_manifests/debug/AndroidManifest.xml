@@ -26,18 +26,55 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true" >
-        <activity android:name="com.duitku.e_study.Menu.About" />
-        <activity android:name="com.duitku.e_study.MenuUtama" />
-        <activity android:name="com.duitku.e_study.Menu.Quiz" />
-        <activity android:name="com.duitku.e_study.Menu.DetailMateri" />
-        <activity android:name="com.duitku.e_study.Menu.Materi" />
-        <activity android:name="com.duitku.e_study.Menu.InputQuiz" />
-        <activity android:name="com.duitku.e_study.Auth.RegisterActivity" />
-        <activity android:name="com.duitku.e_study.Menu.EditQuiz" />
-        <activity android:name="com.duitku.e_study.Auth.ChangePassword" />
-        <activity android:name="com.duitku.e_study.Menu.ChooseQuiz" />
-        <activity android:name="com.duitku.e_study.Menu.InputMateri" />
-        <activity android:name="com.duitku.e_study.Menu.EditMateri" />
+        <service
+            android:name="com.duitku.e_study.Service.SoundService"
+            android:exported="false" />
+        <service
+            android:name="com.duitku.e_study.Service.SoundServiceDua"
+            android:exported="false" />
+        <service
+            android:name="com.duitku.e_study.Service.SoundServiceTiga"
+            android:exported="false" />
+
+        <activity
+            android:name="com.duitku.e_study.Auth.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.duitku.e_study.Menu.About"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.duitku.e_study.MenuUtama"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.duitku.e_study.Menu.Quiz"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.duitku.e_study.Menu.DetailMateri"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.duitku.e_study.Menu.Materi"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.duitku.e_study.Menu.InputQuiz"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.duitku.e_study.Auth.RegisterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.duitku.e_study.Menu.EditQuiz"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.duitku.e_study.Auth.ChangePassword"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.duitku.e_study.Menu.ChooseQuiz"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.duitku.e_study.Menu.InputMateri"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.duitku.e_study.Menu.EditMateri"
+            android:screenOrientation="portrait" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -49,7 +86,7 @@
                 android:resource="@xml/provider_paths" />
         </provider>
 
-        <activity android:name="com.duitku.e_study.Auth.LoginActivity" >
+        <activity android:name="com.duitku.e_study.Menu.SplashScreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

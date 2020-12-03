@@ -19,6 +19,9 @@ import com.duitku.e_study.Menu.About;
 import com.duitku.e_study.Menu.ChooseQuiz;
 import com.duitku.e_study.Menu.Materi;
 import com.duitku.e_study.Model.Data.DataLogin;
+import com.duitku.e_study.Service.SoundService;
+import com.duitku.e_study.Service.SoundServiceDua;
+import com.duitku.e_study.Service.SoundServiceTiga;
 import com.duitku.e_study.Session.SessionManager;
 import com.duitku.e_study.Util.Helper;
 
@@ -31,6 +34,9 @@ public class MenuUtama extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_utama);
+
+        PlayBackgroundSound();
+
         materi = findViewById(R.id.materi) ;
         keluar = findViewById(R.id.keluar) ;
         kuis = findViewById(R.id.kuis) ;
@@ -68,11 +74,28 @@ public class MenuUtama extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         Helper.requestMultiplePermissions(this);
+
+
     }
 
 
 
+    public void PlayBackgroundSound() {
 
+
+        Intent myService = new Intent(MenuUtama.this, SoundServiceTiga.class);
+        //startService(myService);
+        stopService(myService);
+
+        myService = new Intent(MenuUtama.this, SoundServiceDua.class);
+        //startService(myService);
+        stopService(myService);
+
+        Intent intent = new Intent(MenuUtama.this, SoundService.class);
+        startService(intent);
+
+
+    }
 
 
 
@@ -150,8 +173,9 @@ public class MenuUtama extends AppCompatActivity {
     }
 
 
-
-
-
-
+    @Override
+    protected void onResume() {
+        PlayBackgroundSound();
+        super.onResume();
+    }
 }
