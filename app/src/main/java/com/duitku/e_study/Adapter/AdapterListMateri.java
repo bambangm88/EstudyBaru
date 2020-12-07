@@ -73,6 +73,7 @@ public class AdapterListMateri extends RecyclerView.Adapter< AdapterListMateri.A
        String materi = report.getMateri();
        String title = report.getTitle();
        String img_url = report.getImg_url();
+       String pdf_url = report.getPdf_url();
 
 
        holder.texttitle.setText(title);
@@ -87,6 +88,7 @@ public class AdapterListMateri extends RecyclerView.Adapter< AdapterListMateri.A
                i.putExtra("title", title);
                i.putExtra("materi", materi);
                i.putExtra("img_url", img_url);
+               i.putExtra("pdf_url", pdf_url);
                mContext.startActivity(i);
            }
        });
@@ -114,6 +116,7 @@ public class AdapterListMateri extends RecyclerView.Adapter< AdapterListMateri.A
                             i.putExtra("title", title);
                             i.putExtra("materi", materi);
                             i.putExtra("url", img_url);
+                            i.putExtra("pdf_url", pdf_url);
 
                             mContext.startActivity(i);
                         }

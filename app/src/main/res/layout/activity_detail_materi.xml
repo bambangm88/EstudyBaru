@@ -4,54 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/paper"
     tools:context=".Menu.DetailMateri">
 
 
     <ScrollView
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
 
 
     <LinearLayout
+
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:theme="@style/Base.ThemeOverlay.AppCompat.Dark">
-
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar_pay"
-                android:layout_width="match_parent"
-                android:layout_height="?android:attr/actionBarSize"
-                android:layout_gravity="center"
-                android:background="@drawable/kayu"
-                android:theme="@style/mytoolbar"
-                app:elevation="4dp"
-                app:popupTheme="@style/Base.Theme.AppCompat.Light.DarkActionBar">
-
-                <TextView
-                    android:layout_marginLeft="35dp"
-                    android:id="@+id/toolbar_title"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="Detail Materi"
-                    android:textColor="#fff"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
-
-            </androidx.appcompat.widget.Toolbar>
-
-        </com.google.android.material.appbar.AppBarLayout>
 
 
         <ImageView
+            android:visibility="gone"
             android:scaleType="centerCrop"
             android:layout_marginTop="10dp"
             android:id="@+id/imgMateri"
@@ -60,6 +33,7 @@
 
 
         <TextView
+            android:visibility="gone"
             android:textSize="17dp"
             android:textStyle="bold"
             android:layout_marginTop="10dp"
@@ -71,6 +45,7 @@
             android:layout_height="wrap_content"/>
 
         <TextView
+            android:visibility="gone"
             android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
@@ -80,6 +55,7 @@
             android:layout_height="wrap_content"/>
 
         <TextView
+
             android:visibility="gone"
             android:layout_marginTop="10dp"
             android:layout_gravity="center"
@@ -98,6 +74,44 @@
     </LinearLayout>
 
     </ScrollView>
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Base.ThemeOverlay.AppCompat.Dark">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_pay"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:layout_gravity="center"
+            android:background="@drawable/kayu"
+            android:theme="@style/mytoolbar"
+            app:elevation="4dp"
+            app:popupTheme="@style/Base.Theme.AppCompat.Light.DarkActionBar">
+
+            <TextView
+                android:layout_marginLeft="35dp"
+                android:id="@+id/toolbar_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Detail Materi"
+                android:textColor="#fff"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <com.github.barteksc.pdfviewer.PDFView
+        android:layout_marginTop="50dp"
+        android:id="@+id/pdfView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
     <Button
         android:visibility="gone"

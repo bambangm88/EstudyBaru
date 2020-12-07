@@ -9,6 +9,10 @@ public class Server {
     }
 
 
+    public static ApiService getAPIServicePDF() {
+        return Client.getClientUploadPDF(BASE_URL_API).create(ApiService.class);
+    }
+
 
 
 

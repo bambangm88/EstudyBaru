@@ -64,4 +64,7 @@ dependencies {
     implementation 'commons-codec:commons-codec:1.10'
 
     implementation 'com.github.barteksc:android-pdf-viewer:3.1.0-beta.1'
+
+    implementation 'net.gotev:uploadservice:3.4'
+
 }

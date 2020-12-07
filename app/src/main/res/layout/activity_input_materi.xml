@@ -59,7 +59,24 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"/>
 
+        <TextView
+            android:id="@+id/txtfilename"
+            android:layout_marginTop="10dp"
+            android:text="filename"
+            android:layout_marginLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:layout_margin="20dp"
+            android:id="@+id/choosePDF"
+            android:text="PDF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
     <EditText
+        android:visibility="gone"
+
         android:hint="Materi"
         android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
@@ -72,6 +89,7 @@
 
 
         <LinearLayout
+
             android:orientation="vertical"
             android:background="@drawable/border"
             android:layout_marginTop="10dp"

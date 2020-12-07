@@ -16,11 +16,15 @@ import com.duitku.e_study.Model.response.ResponseListMateri;
 import com.duitku.e_study.Model.response.ResponseListQuiz;
 import com.duitku.e_study.Model.response.ResponseLogin;
 
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
+import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.Part;
 
 
 public interface ApiService {
@@ -37,8 +41,9 @@ public interface ApiService {
     @POST("siswa/addScore")
     Call<ResponseData> requestAddScore(@Body JsonScore body);
 
-    @GET("siswa/downloadScore")
-    Call<ResponseData> requestDownloadScore();
+    @Headers("Content-Type: application/json")
+    @POST("siswa/downloadScore")
+    Call<ResponseData> requestDownloadScore(@Body JsonLogin body);
 
     @Headers("Content-Type: application/json")
     @POST("siswa/addMateri")
@@ -74,5 +79,11 @@ public interface ApiService {
     @Headers("Content-Type: application/json")
     @POST("siswa/listQuiz")
     Call<ResponseListQuiz> requestListQuiz(@Body JsonListQuiz body);
+
+    @Multipart
+    @POST("siswa/addMateri")
+    Call<ResponseData> PdfUploadFunction ( @Part MultipartBody.Part file, @Part("filename") RequestBody name, @Part("title") RequestBody title
+            , @Part("image_string") RequestBody image_string);
+
 
 }

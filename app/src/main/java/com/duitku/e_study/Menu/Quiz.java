@@ -37,6 +37,7 @@ import com.duitku.e_study.MenuUtama;
 import com.duitku.e_study.Model.Data.DataListQuiz;
 import com.duitku.e_study.Model.Data.DataLogin;
 import com.duitku.e_study.Model.json.JsonListQuiz;
+import com.duitku.e_study.Model.json.JsonLogin;
 import com.duitku.e_study.Model.json.JsonQuiz;
 import com.duitku.e_study.Model.json.JsonScore;
 import com.duitku.e_study.Model.response.ResponseData;
@@ -410,7 +411,12 @@ public class Quiz extends AppCompatActivity {
 
     private void downloadScore(){
         showProgress(true);
-        Call<ResponseData> call = API.requestDownloadScore();
+        SessionManager session = new SessionManager(Quiz.this);
+        DataLogin user = Helper.DecodeFromJsonResponseLogin(session.getInstanceUser());
+        JsonLogin Json = new JsonLogin();
+        Json.setNis(user.getNis());
+
+        Call<ResponseData> call = API.requestDownloadScore(Json);
         call.enqueue(new Callback<ResponseData>() {
             @Override
             public void onResponse(Call<ResponseData> call, Response<ResponseData> response) {

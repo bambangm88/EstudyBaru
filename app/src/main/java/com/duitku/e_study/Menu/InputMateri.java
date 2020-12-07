@@ -1,14 +1,20 @@
 package com.duitku.e_study.Menu;
 
+import android.Manifest;
 import android.app.Activity;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.Service;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.media.ExifInterface;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -19,12 +25,14 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
 import androidx.core.content.FileProvider;
 
 import com.duitku.e_study.Api.ApiService;
@@ -36,17 +44,36 @@ import com.duitku.e_study.Model.json.JsonQuiz;
 import com.duitku.e_study.Model.response.ResponseData;
 import com.duitku.e_study.R;
 import com.duitku.e_study.Session.SessionManager;
+import com.duitku.e_study.Util.FilePath;
 import com.duitku.e_study.Util.Helper;
 
-import java.io.File;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import net.gotev.uploadservice.MultipartUploadRequest;
+import net.gotev.uploadservice.UploadNotificationConfig;
 
+import org.apache.commons.codec.binary.Base64;
+import org.apache.commons.codec.binary.Base64OutputStream;
+
+import java.io.BufferedInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.UUID;
+
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
+import retrofit2.Retrofit;
+import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 
 public class InputMateri extends AppCompatActivity {
@@ -62,6 +89,19 @@ public class InputMateri extends AppCompatActivity {
     private int GALLERY = 4, CAMERA = 2;
     static final int REQUEST_TAKE_PHOTO = 2;
     String currentPhotoPath;
+    TextView txtFilename ;
+
+    private static final int PDF_REQUEST=777;
+    private Bitmap bitmap;
+
+    public int PDF_REQ_CODE = 1;
+
+    String PdfNameHolder, PdfPathHolder, PdfID;
+    Uri uri;
+
+    Button choosePDF;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,8 +116,21 @@ public class InputMateri extends AppCompatActivity {
 
         rlprogress = findViewById(R.id.rlprogress);
         btnSubmit = findViewById(R.id.btnSubmit);
-        
+        txtFilename = findViewById(R.id.txtfilename);
+
         ivImage = findViewById(R.id.ivimage);
+
+        choosePDF = findViewById(R.id.choosePDF);
+
+        choosePDF.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //selectImage();
+                selectPdf();
+            }
+        });
+
+
 
         ivImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,17 +160,22 @@ public class InputMateri extends AppCompatActivity {
 
                 if (title.equals("")){
                     _title.setError("REQUIRED");
-                }else if (materi.equals("")){
-                    _materi.setError("REQUIRED");
-                }else if (image.equals("")){
-                    Toast.makeText(mContext, "Pilih Image", Toast.LENGTH_SHORT).show();
-                }else{
+                }else if (uri == null){
+                    Toast.makeText(mContext, "Pilih PDF Materi", Toast.LENGTH_SHORT).show();
+                }
+                else if (image.equals("")){
+                    Toast.makeText(mContext, "Pilih Gambar", Toast.LENGTH_SHORT).show();
+                }
+                else{
 
-                    JsonMateri json = new JsonMateri();
+                   /* JsonMateri json = new JsonMateri();
                     json.setMateri(materi);
                     json.setTitle_materi(title);
                     json.setImage_string(image);
-                    addMateri(json);
+                    addMateri(json);*/
+
+                   PdfUploadFunction(title,image);
+
 
                 }
 
@@ -287,6 +345,18 @@ public class InputMateri extends AppCompatActivity {
 
 
 
+        if (requestCode == PDF_REQ_CODE && resultCode == RESULT_OK && data != null && data.getData() != null) {
+
+            uri = data.getData();
+            File file= new File(uri.getPath());
+
+
+            txtFilename.setText(""+file.getName());
+
+        }
+
+
+
 
 
     }
@@ -378,6 +448,177 @@ public class InputMateri extends AppCompatActivity {
 
 
     }
+
+
+    private void selectPdf()
+    {
+        Intent intent = new Intent();
+
+        intent.setType("application/pdf");
+
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+
+        startActivityForResult(Intent.createChooser(intent, "Select Pdf"), PDF_REQ_CODE);
+    }
+
+
+    public void AllowRunTimePermission(){
+
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_EXTERNAL_STORAGE))
+        {
+
+            Toast.makeText(this,"READ_EXTERNAL_STORAGE permission Access Dialog", Toast.LENGTH_LONG).show();
+
+        } else {
+
+            ActivityCompat.requestPermissions(this,new String[]{ Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
+
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int RC, String per[], int[] Result) {
+
+        switch (RC) {
+
+            case 1:
+
+                if (Result.length > 0 && Result[0] == PackageManager.PERMISSION_GRANTED) {
+
+                    Toast.makeText(this,"Permission Granted", Toast.LENGTH_LONG).show();
+
+                } else {
+
+                    Toast.makeText(this,"Permission Canceled", Toast.LENGTH_LONG).show();
+
+                }
+                break;
+        }
+    }
+
+    private void uploadPDF() throws MalformedURLException, FileNotFoundException {
+        PdfID = UUID.randomUUID().toString();
+        PdfPathHolder = FilePath.getPath(this, uri);
+
+
+        MultipartUploadRequest uploadRequest = null;
+
+            uploadRequest = new MultipartUploadRequest(this, PdfID, Constant.BASE_URL_API+"siswa/addMateri")
+                    .addFileToUpload(PdfPathHolder, "pdf")
+                    .addParameter("name", PdfNameHolder)
+                    //.addParameter("username",username)
+                    .setMaxRetries(5);
+
+
+// For Android > 8, we need to set an Channel to the UploadNotificationConfig.
+// So, here, we create the channel and set it to the MultipartUploadRequest
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationManager notificationManager = (NotificationManager) getSystemService(Service.NOTIFICATION_SERVICE);
+            NotificationChannel channel = new NotificationChannel("Upload", "Upload service", NotificationManager.IMPORTANCE_DEFAULT);
+            notificationManager.createNotificationChannel(channel);
+
+            UploadNotificationConfig notificationConfig = new UploadNotificationConfig();
+            notificationConfig.setNotificationChannelId("Upload");
+
+            uploadRequest.setNotificationConfig(notificationConfig);
+        } else {
+            // If android < Oreo, just set a simple notification (or remove if you don't wanna any notification
+            // Notification is mandatory for Android > 8
+            uploadRequest.setNotificationConfig(new UploadNotificationConfig());
+        }
+
+        uploadRequest.startUpload();
+
+
+
+
+
+
+
+    }
+
+
+    public void PdfUploadFunction(String title , String image) {
+
+        PdfPathHolder = FilePath.getPath(this, uri);
+
+        //File file=new File(uri.getPath());
+        RequestBody Title=RequestBody.create(MediaType.parse("text/plain"),title);
+        RequestBody Pdf=RequestBody.create(MediaType.parse("application/pdf"), PdfPathHolder);
+
+
+
+        //Create a file object using file path
+        File file = new File(uri.getPath());
+        // Parsing any Media type file
+      //  RequestBody requestBody = RequestBody.create(MediaType.parse("*/*"), PdfPathHolder);
+      //  MultipartBody.Part fileToUpload = MultipartBody.Part.createFormData("filename", file.getName(), requestBody);
+      //  RequestBody filename = RequestBody.create(MediaType.parse("text/plain"), file.getName());
+      //  RequestBody _title = RequestBody.create(MediaType.parse("text/plain"), title);
+
+        RequestBody requestBody = RequestBody.create(MediaType.parse("application/pdf"), PdfPathHolder);
+        MultipartBody.Part fileToUpload = MultipartBody.Part.createFormData("file", file.getName(), requestBody);
+        RequestBody filename = RequestBody.create(MediaType.parse("text/plain"), file.getName());
+        RequestBody _title = RequestBody.create(MediaType.parse("text/plain"), title);
+        RequestBody _image = RequestBody.create(MediaType.parse("text/plain"), image);
+
+
+        ApiService API_ = Server.getAPIServicePDF();
+        showProgress(true);
+        Call<ResponseData> call = API_.PdfUploadFunction(fileToUpload,filename,_title , _image);
+        call.enqueue(new Callback<ResponseData>() {
+            @Override
+            public void onResponse(Call<ResponseData> call, Response<ResponseData> response) {
+
+                if(response.isSuccessful()) {
+                    showProgress(false);
+                    if (response.body().getMetadata() != null) {
+
+                        String message = response.body().getMetadata().getMessage() ;
+                        String status = response.body().getMetadata().getCode() ;
+
+                        if(status.equals(Constant.ERR_200)){
+
+                            refresh();
+                            Toast.makeText(mContext, message, Toast.LENGTH_SHORT).show();
+
+                        }else{
+
+                            Toast.makeText(mContext, message, Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
+                }
+
+                else{
+                    showProgress(false);
+                    //Log.e("TAG", "onResponse: "+response.body().toString() );
+                    Toast.makeText(mContext, "Server Error", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseData> call, Throwable t) {
+                showProgress(false);
+                Toast.makeText(mContext, t.getMessage(), Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
 
 
 

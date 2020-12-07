@@ -19,6 +19,18 @@ public class DataListMateri {
     @SerializedName("img_url")
     private String img_url;
 
+    @SerializedName("pdf_url")
+    private String pdf_url;
+
+    public String getPdf_url() {
+        return pdf_url;
+    }
+
+    public void setPdf_url(String pdf_url) {
+        this.pdf_url = pdf_url;
+    }
+
+
     public String getId_materi() {
         return id_materi;
     }

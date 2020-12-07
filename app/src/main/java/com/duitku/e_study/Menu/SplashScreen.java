@@ -3,6 +3,7 @@ package com.duitku.e_study.Menu;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.duitku.e_study.Auth.LoginActivity;
 import com.duitku.e_study.MenuUtama;
